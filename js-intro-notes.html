@@ -143,6 +143,16 @@
     function subset (string, index1, index2) {
         return string.substring(index1, index2);
     }
+
+    // == vs. ===
+    let numericString = "42";
+    console.log(typeof numericString);
+    let theAnswer = 42;
+    console.log(typeof theAnswer);
+
+    function isNumber (value) {
+        return !(isNaN(value) || typeof value === "boolean")
+    }
   </script>
 </body>
 </html>
