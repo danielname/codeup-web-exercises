@@ -133,15 +133,15 @@
     }
     // Create a function that takes three strings and returns a copy of the first string with the first instance of the second string substituted for the characters of the third string.
     function replaceString(string1, string2, string3) {
-        string1.replace(string2, string3);
+        return string1.replace(string2, string3);
     }
     // Do the same, but replace all instances of the second string with the characters of the third string.
     function replaceStringMore(string1, string2, string3) {
-        string1.replaceAll(string2, string3);
+        return string1.replaceAll(string2, string3);
     }
     // Create a function that takes a string and two numbers and returns the subset of the original string assuming the two numbers are indexes.
     function subset (string, index1, index2) {
-        string.substring(index1, index2);
+        return string.substring(index1, index2);
     }
   </script>
 </body>
