@@ -66,6 +66,38 @@
     console.log("Shakespeare said: \"All the world's a stage\"");
     console.log(`Shakespeare said: "All the world's a stage"`);
     console.log(`${myTitle} ${myName} ${myLastName}`);
+
+    // Mini-exercise.  Write a function that takes a person's first, middle, and last names and returns their full name.
+    function yourFullName (first, middle, last) {
+        return first + " " + middle + " " + last;
+    }
+    // Mini exercise. Write a function that takes a house number, street name, city, state, and zip code and returns the full address.
+    function address (number, street, city, state, zip) {
+        return number + " " + street + ", " + state + ", " + zip;
+    }
+    // Bonus.  Write a function that takes a number representing the temperature and a boolean representing whether the temperature is Fahrenheit or not.  If it is Fahrenheit, the function converts to Celsius.  Otherwise, it convets to Fahrenheit.  Look up the Fahrenheit to Celsius conversion formula online.
+    function tempConversion (temp, farenheit) {
+        if (farenheit === true) {
+            return (temp - 32) * (5 / 9) + " degrees Celsius."
+        } else {
+            return temp * 9 / 5 + 32 + " degrees Farenheit"
+        }
+    }
+    // Bonus.  Change your functions for liters-gallons and miles-kilometers so they convert both ways.
+    function liquidConversion (volume, liters) {
+        if (liters === true) {
+            return volume * 0.2641 + " gallons";
+        } else {
+            return volume * 3.785 + " liters";
+        }
+    }
+    function distanceConversion (distance, miles) {
+        if (miles = true) {
+            return distance * 1.609 + " kilometers";
+        } else {
+            return distance * 0.6213 + "miles";
+        }
+    }
   </script>
 </body>
 </html>
