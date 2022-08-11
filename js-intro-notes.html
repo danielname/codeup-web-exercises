@@ -29,27 +29,43 @@
     }
 
     function divisibleByFiveAndThree (number) {
-        return number % 5 ===0 && number % 3 === 0
+        return number % 5 ===0 && number % 3 === 0;
     }
     function divisibleByFiveOrThree (number) {
-        return number % 5 ===0 || number % 3 === 0
+        return number % 5 ===0 || number % 3 === 0;
     }
     // Mini-exercise: write a function that returns true if a number is divisible by either 7 or 3, or false if a number is divisible by neither 7 nor 3.
     function divisibleBySevenOrThree (number) {
-        return number % 7 === 0 || number % 3 === 0
+        return number % 7 === 0 || number % 3 === 0;
     }
     // Mini-exercise 2: write a function that returns true if a number is divisible by either 3 or 2, or false if it is divisible by neither 2 nor 3.
     function divisibleByEitherThreeOrTwo (number) {
-        return number % 3 === 0 || number % 2 === 0
+        return number % 3 === 0 || number % 2 === 0;
     }
     // Mini-exercise 3: write a function that returns true if a number is both odd and divisible by 3, or false if the number is neither odd nor divisible by 3.
     function oddDivisibleByThree (number) {
-        return number % 2 === 1 && number % 3 === 0
+        return number % 2 === 1 && number % 3 === 0;
     }
     // Mini-exercise 4: modify the above function so that it returns true if the number is either odd or divisible by 3, or false if it is neither odd nor divisible by 3.
     function oddOrDivisibleByThree (number) {
-        return number % 2 === 1 || number % 3 === 0
+        return number % 2 === 1 || number % 3 === 0;
     }
+
+    //strings start here
+    let myName = "Daniel";
+    let myLastName = "Name";
+    let myTitle = "Mr.";
+    //concatenation
+    let myFullName = myName + " " + myLastName;
+    console.log(myFullName);
+    myFullName = myTitle + " " + myFullName;
+    console.log(myFullName);
+    let sentence = "All the world";
+    sentence = sentence + "'s a stage!";
+    console.log(sentence);
+    console.log("Shakespeare said: \"All the world's a stage\"");
+    console.log(`Shakespeare said: "All the world's a stage"`);
+    console.log(`${myTitle} ${myName} ${myLastName}`);
   </script>
 </body>
 </html>
