@@ -52,5 +52,5 @@ if (premium && offerNotExpired) {
 } else if (numberOfItems > 2 && offerNotExpired) {
     alert ("Great! You can use this offer!");
 } else {
-    alert ("Sorry, you cannot use this offer at this time.")
+    alert ("Sorry, you cannot use this offer at this time.");
 }
