@@ -38,8 +38,27 @@
 //     console.log("woof!");
 // }
 // // function declaration. the browser will go over your code first to put declared functions into memory, so basically they're always at the top.
-// yap()
+// yap();
 // function yap() {
 //     console.log("yip yip!");
 // }
 
+// arrow functions
+//declaration
+// function add (num1, num2) {
+//     return num1 + num2;
+// }
+//
+// //expression
+// const add = function(num1, num2) {
+//     return num1 + num2;
+// }
+
+//arrow function. works as long as all the function does is return. works exactly the same way as expressions.
+const add = (num1, num2) => num1 + num2;
+
+// if there is only one parameter, you dont need parentheses around the parameter
+const addTen = number => number + 10;
+
+// if there are no parameters, use empty parentheses
+const helloWorld = () => "Hello world!";
