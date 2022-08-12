@@ -158,6 +158,19 @@
     function isNumber (value) {
         return !(isNaN(value) || typeof value === "boolean");
     }
+
+    //numeric coersion
+    //parseInt() or parseFloat() will take a string and explicitly coerce it to a number.
+
+    // Write a function that takes two values.  If the values can be converted to numbers, the function should return their product.  Otherwise, the function should return false.
+    function numberProductCheck(value1, value2) {
+        if ((!isNaN(parseFloat(value1)) == true &&  !isNaN(parseFloat(value2)) == true) == true) {
+            return parseFloat(value1) * parseFloat(value2);
+        } else {
+            return false;
+        }
+    }
+
   </script>
 </body>
 </html>
