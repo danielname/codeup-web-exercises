@@ -135,7 +135,7 @@ function calculateTotal (luckyNumber, subTotal) {
             return 0;
             break;
         default:
-            return "You entered something wrong."
+            return "You entered something wrong.";
             break;
     }
 }
@@ -172,17 +172,21 @@ alert("Your lucky number was " + luckyNumber + ", and your total, after discount
 let numberCheck = confirm("Would you like to enter a number?");
 if (numberCheck) {
     let numberPick = prompt("Pick a number");
-    if (numberPick % 2 === 0) {
-        alert(numberPick + " is an even number.");
+    if (isNaN(numberPick) === false) {
+        if (numberPick % 2 === 0) {
+            alert(numberPick + " is an even number.");
+        } else {
+            alert(numberPick + " is an odd number.");
+        }
+        alert(numberPick + " plus 100 is " + (parseFloat(numberPick) + parseFloat(100)));
+        if (numberPick > 0) {
+            alert(numberPick + " is a positive number.");
+        } else if (numberPick === 0) {
+            alert(numberPick + " is neither positive nor negative.");
+        } else {
+            alert(numberPick + " is a negative number.");
+        }
     } else {
-        alert(numberPick + " is an odd number.");
-    }
-    alert(numberPick + " plus 100 is " + (parseFloat(numberPick) + parseFloat(100)));
-    if (numberPick > 0) {
-        alert(numberPick + " is a positive number.");
-    } else if (numberPick === 0) {
-        alert(numberPick + " is neither positive nor negative.");
-    } else {
-        alert(numberPick + " is a negative number.")
+        alert ("You did not enter a number, do better.");
     }
 }
