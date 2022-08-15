@@ -8,7 +8,7 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-const sayHello = name => "Hello " + name;
+const sayHello = name => "Hello, " + name + "!";
 
 /**
  * TODO:
