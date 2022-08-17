@@ -37,7 +37,7 @@
 //     } else if (colorString === "violet") {
 //         return "Violet colored lilacs are quite beautiful.";
 //     } else {;\
-//         return "i do not know anything about the color " + colorString;
+//         return "I do not know anything about the color " + colorString;
 //     }
 // }
 // Don't change the next two lines!
@@ -150,7 +150,7 @@ function calculateTotal (luckyNumber, subTotal) {
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
 let priceCheck = prompt("How much is your order total?");
-alert("Your lucky number was " + luckyNumber + ", and your total, after discount, is $" + calculateTotal(luckyNumber, priceCheck));
+alert("Your lucky number was " + luckyNumber + ", your price before discount was $" + priceCheck + ", and your total, after discount, is $" + calculateTotal(luckyNumber, priceCheck));
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -169,24 +169,41 @@ alert("Your lucky number was " + luckyNumber + ", and your total, after discount
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+// let numberCheck = confirm("Would you like to enter a number?");
+// if (numberCheck) {
+//     let numberPick = prompt("Pick a number");
+//     if (isNaN(numberPick) === false) {
+//         if (numberPick % 2 === 0) {
+//             alert(numberPick + " is an even number.");
+//         } else {
+//             alert(numberPick + " is an odd number.");
+//         }
+//         alert(numberPick + " plus 100 is " + (parseFloat(numberPick) + parseFloat(100)));
+//         if (numberPick > 0) {
+//             alert(numberPick + " is a positive number.");
+//         } else if (numberPick === 0) {
+//             alert(numberPick + " is neither positive nor negative.");
+//         } else {
+//             alert(numberPick + " is a negative number.");
+//         }
+//     } else {
+//         alert ("You did not enter a number, do better.");
+//     }
+// }
+
+function evenOrOdd (number) {
+    return number % 2 === 0 ? alert(number + " is an even number.") : alert(number + " is an odd number.");
+}
+function positiveOrNegative (number) {
+    return number > 0 ? alert (number + " is a positive number.") : alert (number + " is a negative number.");
+}
 let numberCheck = confirm("Would you like to enter a number?");
 if (numberCheck) {
-    let numberPick = prompt("Pick a number");
+    let numberPick = parseFloat(prompt("Pick a number"));
     if (isNaN(numberPick) === false) {
-        if (numberPick % 2 === 0) {
-            alert(numberPick + " is an even number.");
-        } else {
-            alert(numberPick + " is an odd number.");
-        }
+        evenOrOdd(numberPick);
         alert(numberPick + " plus 100 is " + (parseFloat(numberPick) + parseFloat(100)));
-        if (numberPick > 0) {
-            alert(numberPick + " is a positive number.");
-        } else if (numberPick === 0) {
-            alert(numberPick + " is neither positive nor negative.");
-        } else {
-            alert(numberPick + " is a negative number.");
-        }
+        positiveOrNegative(numberPick);
     } else {
         alert ("You did not enter a number, do better.");
     }
-}
