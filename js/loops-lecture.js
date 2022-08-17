@@ -36,10 +36,24 @@ while (number < 200) {
 //get the user input for the next item's cost
 //there needs to be a way for the user to say there are no more items.
 
-let totalCost = 0;
+/*let totalCost = 0;
 while (confirm("Do you have more items to check out?")) {
     let priceOfItem = parseFloat(prompt("Enter the price of your item"));
     totalCost += priceOfItem;
-    alert(`Your total is now $` + totalCost)
+    alert(`Your running total is now $` + totalCost)
 }
-alert (`Your final total is $` + totalCost)
+alert (`Your final total is $` + totalCost)*/
+
+let total = 0;
+while (true) { //use while(true) any time you want to give the user control of when they break out of a loop
+    let userInput = prompt( (`Enther the price of your item.` +
+                            `\n Enter STOP when you are done.`));
+    if (userInput === "STOP") {
+        alert("Your final total is $" + total.toFixed(2));
+        break;
+        else {
+            total += parseFloat(userInput);
+            alert (`Your running total is $` + total.toFixed(2));
+        }
+    }
+}
