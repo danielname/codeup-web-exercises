@@ -66,3 +66,16 @@ do {
     guess = parseInt(prompt(`Enter a number between 1 and 6`));
 } while (guess !== number);
 alert(`your guess of ${guess} matches the number ${number}!`)
+
+
+//for loop
+/*shorthand for a while loop.
+in one parentheses we declare a count, initialize the control variable, and modify the value all in one.
+
+between curly brackets you have whatever happens on each iteration of the loop.
+ */
+//
+// for (let i = 100; i >= 0; i--){
+//     console.log(i);
+// }
+// in a for loop incrementation or decrementation is the absolute last thing that happens in the loop.
