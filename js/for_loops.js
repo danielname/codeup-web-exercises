@@ -14,7 +14,9 @@ for (let i = 0; i < 10; i++) {
     }
 }
 
-//digits question, skipping for now
+for (i = 1; i < 10; i++) {
+    console.log(parseInt(parseFloat(`0.${i}${i}${i}${i}${i}${i}${i}${i}${i}${i}`)* 10 ** (i)));
+}
 
 for (let i = 100; i > 0; i -= 5) {
     console.log(i);
