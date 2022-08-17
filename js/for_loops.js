@@ -13,3 +13,9 @@ for (let i = 0; i < 10; i++) {
         console.log(currentNumber + ` is odd.`)
     }
 }
+
+//digits question, skipping for now
+
+for (let i = 100; i > 0; i -= 5) {
+    console.log(i);
+}
