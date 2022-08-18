@@ -1,6 +1,6 @@
 function showMultiplicationTable (number) {
     for (let i = 1; i <= 10; i++){
-        console.log(number + " * " + i + " = " + (number * i));
+        console.log(number + " x " + i + " = " + (number * i));
     }
 }
 
@@ -18,6 +18,9 @@ for (i = 1; i < 10; i++) {
     console.log(parseInt(parseFloat(`0.${i}${i}${i}${i}${i}${i}${i}${i}${i}${i}`)* 10 ** (i)));
 }
 
+// for (i = 1; i < 10; i++) {
+// console.log(String(i).repeat(i));
+// }
 
 // for (i = 1; i < 10; i++) {
 //     let s = [i]
@@ -37,8 +40,9 @@ for (i = 1; i < 10; i++) {
 //         num += "\n";
 //     }
 //     console.log(num);
-}
+// }
 
 for (let i = 100; i > 0; i -= 5) {
     console.log(i);
 }
+

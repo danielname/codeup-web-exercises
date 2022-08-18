@@ -79,3 +79,15 @@ between curly brackets you have whatever happens on each iteration of the loop.
 //     console.log(i);
 // }
 // in a for loop incrementation or decrementation is the absolute last thing that happens in the loop.
+
+// break and continue
+let string = ``;
+for (let = i = 0; i < 8; i++) {
+    let word = prompt(`Let's make a sentence! Enter a word.`);
+    if (word == "curse"){
+        console.log("That word is not allowed.");
+        break;
+    }
+    string += ` ` + word;
+    console.log(`Your sentence is: ` + string);
+}
