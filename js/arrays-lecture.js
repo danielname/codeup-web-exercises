@@ -65,6 +65,9 @@ groceryList = firstHalfOfMyGroceryList.concat(secondHalfOfMyGroceryList);
 //reversing and sorting
 groceryList.reverse();
 groceryList.sort();
+groceryList[3] = `Blueberries`;
 prices.sort(function(a,b){
     return a-b;
 })
+
+console.log(groceryList.join(",").toLowerCase().split(",").sort());
