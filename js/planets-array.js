@@ -20,28 +20,35 @@
 
     console.log('Adding "The Sun" to the beginning of the planets array.');
     planets = planets.unshift(`The Sun`)
-    console.log(planets);
+
 
     console.log('Adding "Pluto" to the end of the planets array.');
     planets = planets.push(`Pluto`);
-    console.log(planets);
 
     console.log('Removing "The Sun" from the beginning of the planets array.');
     planets = planets.shift();
-    console.log(planets);
 
     console.log('Removing "Pluto" from the end of the planets array.');
     planets = planets.pop();
-    console.log(planets);
 
     console.log('Finding and logging the index of "Earth" in the planets array.');
     console.log(planets.indexOf(`Earth`));
 
     console.log("Reversing the order of the planets array.");
     planets = planets.reverse();
-    console.log(planets);
 
     console.log("Sorting the planets array.");
     planets = planets.sort();
-    console.log(planets);
 })();
+
+
+//bonus
+function zatanna(string){
+    let zArray = string.split(" ");
+    for (let i = 0; i < zArray.length; i++){
+        zArray[i] = zArray[i].split("");
+        zArray[i] = zArray[i].reverse();
+        zArray[i] = zArray[i].join("");
+    }
+    return zArray.join(" ");
+}
