@@ -44,11 +44,9 @@
 
 //bonus
 function zatanna(string){
-    let zArray = string.split(" ");
+    let zArray = string.toLowerCase().split(" ");
     for (let i = 0; i < zArray.length; i++){
-        zArray[i] = zArray[i].split("");
-        zArray[i] = zArray[i].reverse();
-        zArray[i] = zArray[i].join("");
+        zArray[i] = zArray[i].split("").reverse().join("");
     }
     return zArray.join(" ");
 }
