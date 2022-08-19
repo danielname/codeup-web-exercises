@@ -50,3 +50,21 @@ groceryList.push(`potatoes`); /*add to the end. can add multiple separated with 
 groceryList.pop(); /*remove from the end*/
 groceryList.unshift(`sliced cheddar`); /*add to beginning*/
 groceryList.shift(); /*remove from beginning*/
+
+let indexOfButter = groceryList.indexOf(`butter`);
+groceryList[indexOfButter] = `peanut butter`; /*reassigns this index*/
+
+
+//slicing to add something to the middle
+let firstHalfOfMyGroceryList = groceryList.slice(0,2); /*if two indeces goes from first to, but not including, second*/
+let secondHalfOfMyGroceryList = groceryList.slice(2); /*if only one index goes from index to end*/
+
+firstHalfOfMyGroceryList.push(`butter`);
+groceryList = firstHalfOfMyGroceryList.concat(secondHalfOfMyGroceryList);
+
+//reversing and sorting
+groceryList.reverse();
+groceryList.sort();
+prices.sort(function(a,b){
+    return a-b;
+})
