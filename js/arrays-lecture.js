@@ -33,6 +33,14 @@ function outputArray(array) {
 
 let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
 
-prices.forEach(function(preice, index){
-    console.log("item number " + index + " costs " + price)
-});
+// forEach takes an anonymous function
+// the function has up to three parameters: the element, the index, and the array.
+// the second and third parameters are optional
+
+// prices.forEach(function(preice, index){
+//     console.log("item number " + index + " costs " + price)
+// });
+
+prices.forEach(price => {
+    console.log(price);
+})
