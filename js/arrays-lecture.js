@@ -44,3 +44,9 @@ let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
 prices.forEach(price => {
     console.log(price);
 })
+
+// adding to arrays
+groceryList.push(`potatoes`); /*add to the end. can add multiple separated with commas*/
+groceryList.pop(); /*remove from the end*/
+groceryList.unshift(`sliced cheddar`); /*add to beginning*/
+groceryList.shift(); /*remove from beginning*/
