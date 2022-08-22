@@ -28,7 +28,12 @@ let currentWeather = {
 // }
 
 //dynamically defining properties
-currentWeather.uvIndex = 9.79
+currentWeather.uvIndex = 9.79;
+
+//for in loops
+for (let property /*called it x on w3schools*/ in currentWeather) {
+    console.log(property + ": " + currentWeather[property]);
+}
 
 //methods and properties represent strings, numbers, etc as objects and identify the property
 
