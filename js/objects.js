@@ -71,33 +71,33 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-let books = [
-        {author: {
-            firstName: `Thomas`,
-            lastName: `Garrity`
-            },
-        title: `All The Math You Missed`},
-        {author: {
-                firstName: `Homer`,
-                lastName: ``
-            },
-            title: `The Iliad And The Odyssey`},
-        {author: {
-                firstName: `Brian`,
-                lastName: `Cooney`
-            },
-            title: `Posthumanity`},
-        {author: {
-                firstName: `Fritjof`,
-                lastName: `Capra`
-            },
-            title: `The Turning Point`},
-        {author: {
-                firstName: `Jordan`,
-                lastName: `Peterson`
-            },
-            title: `12 Rules For Life`},
-    ]
+// let books = [
+//         {author: {
+//             firstName: `Thomas`,
+//             lastName: `Garrity`
+//             },
+//         title: `All The Math You Missed`},
+//         {author: {
+//                 firstName: `Homer`,
+//                 lastName: ``
+//             },
+//             title: `The Iliad And The Odyssey`},
+//         {author: {
+//                 firstName: `Brian`,
+//                 lastName: `Cooney`
+//             },
+//             title: `Posthumanity`},
+//         {author: {
+//                 firstName: `Fritjof`,
+//                 lastName: `Capra`
+//             },
+//             title: `The Turning Point`},
+//         {author: {
+//                 firstName: `Jordan`,
+//                 lastName: `Peterson`
+//             },
+//             title: `12 Rules For Life`},
+//     ]
 
     /**
      * TODO:
@@ -123,23 +123,35 @@ let books = [
      *      ---
      *      ...
      */
-for (let x in books) {
-    console.log(`Book #${parseFloat(x)+1} \nTitle: ${books[x].title} \nAuthor: ${books[x].author.firstName} ${books[x].author.lastName} \n---\n...`);
-}
+// for (let x in books) {
+    // console.log(`Book #${parseFloat(x)+1} \nTitle: ${books[x].title} \nAuthor: ${books[x].author.firstName} ${books[x].author.lastName} \n---\n...`);
+// }
 
     /**
      * Bonus:
-     * - Create a function named `createBook` that accepts a title and author name and returns a book object with the properties described previously. Refactor your code that creates the books array to instead use your function.
-     * - Create a function named `showBookInfo` that accepts a book object and outputs the information described above. Refactor your loop to use your`showBookInfo` function.
+     * - Create a function named `createBook` that accepts a title and author name and returns a book object with the properties described previously. Refactor your code that creates the books array to instead use your function.*/
+    let books = [];
+    function createBook (title,authorFirstName,authorLastName){
+        books.push({
+            author: {firstName: authorFirstName,
+                lastName: authorLastName
+            },
+            title: title})
+        return {
+            author: {firstName: authorFirstName,
+                lastName: authorLastName
+            },
+            title: title}
+    }
+
+
+     /* - Create a function named `showBookInfo` that accepts a book object and outputs the information described above. Refactor your loop to use your`showBookInfo` function.
      */
 
-function createBook (title,authorFirstName,authorLastName){
-    return {
-        author: {firstName: authorFirstName,
-            lastName: authorLastName
-        },
-        title: title}
-    }
-function showBookInfo(bookObject){
 
+function showBookInfo(bookObject){
+    console.log(`Title: ${bookObject.title} \nAuthor: ${bookObject.author.firstName} ${bookObject.author.lastName}`);
+}
+for (let i = 0; i < books.length; i++) {
+    console.log(showBookInfo(books[i]));
 }
