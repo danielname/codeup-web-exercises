@@ -78,3 +78,64 @@ for (let i = 0; i < hourlyWeather.length; i++) {
 hourlyWeather.forEach(function(forecast=>
     console.log(`At ${forecast.time} the temperature will be ${forecast.temperature}, and feel like ${forecast.feels_like}.`);
 )
+
+//objects with object properties
+let texasInfo = [
+    {
+        city: "San Antonio",
+        latitude: 29.423017,
+        longitude: -98.48527,
+        timezone: "America/Chicago",
+        currentWeather: {
+            humidity: 77,
+            temp: 82.33,
+            feels_like: 88.79,
+            clouds: 75
+        }
+    },
+    {
+        city: "Houston",
+        latitude: 29.7915,
+        longitude: -95.093,
+        timezone: "America/Chicago",
+        currentWeather: {
+            humidity: 68,
+            temp: 87.44,
+            feels_like: 97.7,
+            clouds: 75
+        }
+    }
+];
+
+//texasInfo[0].currentWeather.temp would return the current temperature in san antonio
+
+let fighter = {
+    name: "Arata",
+    hitPoints: 18,
+    maxDamage: 8,
+    attack: function (opponent){
+        console.log(`${opponent.name} has ${opponent.hitPoints}.`)
+        console.log(this.name + " attacks!");
+        var damage = Math.ceil(Math.random() * this.maxDamage);
+        console.log(this.name + " does " + damage + " points of damage!");
+        let damage = Math.ceil(Math.random() * this.maxDamage);
+        console.log(`${this.name} does ${damage} points of damage!`);
+        opponent.hitPoints -= damage;
+        console.log(`${opponent.name} now has ${opponent.hitPoints}.`)
+    }
+}
+//"this" references the object that you are currently in
+
+let monster = {
+    name: "Goblin",
+    hitPoints: 8,
+    maxDamage: 6,
+    attack: function (opponent){
+        console.log(this.name + " attacks!");
+        var damage = Math.ceil(Math.random() * this.maxDamage);
+        console.log(this.name + " does " + damage + " points of damage!");
+    }
+}
+//YOU CANNOT USE ARROW FUNCTIONS IN METHOD DEFINITIONS BECAUSE THEY CANNOT BIND "THIS" TO THE OBJECT!!!!!!!
+
+
