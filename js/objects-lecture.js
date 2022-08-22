@@ -183,3 +183,30 @@ let model = {
         maxDamage: 6
     }
 }
+
+//creating objects
+//define an empty object and dynamically create properties
+let goblin = {};
+goblin.name = "Goblin";
+
+// create a function that returns objects
+function makeMonster (name, hitPoints, maxDamage) {
+    return {
+        name: name,
+        hitPoints: hitPoints,
+        maxDamage: maxDamage
+    }
+}
+
+model.hobgoblin = makeMonster("Hobgoblin", 11, 11);
+
+
+//use object constructer
+
+function Monster (name, hitPoints, maxDamage) {
+    this.name = name;
+    this.hitPoints = hitPoints;
+    this.maxDamage = maxDamage;
+}
+
+model.hobgoblinCaptain = new Monster (`Hobgoblin Captain`, 39, 14);

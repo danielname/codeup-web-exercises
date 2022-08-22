@@ -133,8 +133,12 @@ for (let x in books) {
      * - Create a function named `showBookInfo` that accepts a book object and outputs the information described above. Refactor your loop to use your`showBookInfo` function.
      */
 
-function createBook (title,author){
-    return {author: author {firstName, lastName}, title}
+function createBook (title,authorFirstName,authorLastName){
+    return {
+        author: {firstName: authorFirstName,
+            lastName: authorLastName
+        },
+        title: title}
     }
 function showBookInfo(bookObject){
 
