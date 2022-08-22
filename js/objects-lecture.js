@@ -4,10 +4,31 @@ let currentWeather = {
     humidity: 77,
     temp: 82.33,
     feels_like: 88.79,
-    clouds: 75
+    clouds: 75,
+    description: "cloudy"
 }
 
-console.log(currentWeather.temp)
+// console.log(currentWeather.temp);
+// console.log(currentWeather.description);
+// console.log(currentWeather.feels_like);
+//
+// console.log(currentWeather["humidity"]); //bracket notation allows us to use variables
+// let userChoice = "clouds";
+// console.log(currentWeather[userChoice]);
+// userChoice = "temp";
+// console.log(currentWeather[userChoice]);
+
+
+//you can do anything to an object property that you can do to variables
+// console.log(`The current weather is ` + currentWeather.temp);
+// if (currentWeather.temp > 95) {
+//     console.log(`It's kind of hot.`);
+// } else  {
+//     console.log(`It's cool today for texas`);
+// }
+
+//dynamically defining properties
+currentWeather.uvIndex = 9.79
 
 //methods and properties represent strings, numbers, etc as objects and identify the property
 
