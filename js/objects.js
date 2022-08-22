@@ -17,6 +17,7 @@
             return "hello " + this.firstName + this.lastName;
         }
     }
+    console.log(person.sayHello());
 
     /**
      * TODO:
@@ -123,8 +124,8 @@
      *      ---
      *      ...
      */
-// for (let x in books) {
-    // console.log(`Book #${parseFloat(x)+1} \nTitle: ${books[x].title} \nAuthor: ${books[x].author.firstName} ${books[x].author.lastName} \n---\n...`);
+// for (let i = 0; i < books.length; i++) {
+    // console.log(`Book #${parseFloat(i)+1} \nTitle: ${books[i].title} \nAuthor: ${books[i].author.firstName} ${books[i].author.lastName} \n---\n...`);
 // }
 
     /**
