@@ -54,9 +54,9 @@
     ];
     for (let i = 0; i < shoppers.length; i++) {
         if (shoppers[i].amount > 200){
-            console.log(`Hello ${shoppers[i].name}, your subtotal of ${shoppers[i].amount} will be discounted by ${shoppers[i].amount * 0.12}, making your final total ${shoppers[i].amount * 0.88}. Thank you for shopping at HEB!`);
+            console.log(`Hello ${shoppers[i].name}, your subtotal of $${(shoppers[i].amount).toFixed(2)} will be discounted by $${(shoppers[i].amount * 0.12).toFixed(2)}, making your final total $${(shoppers[i].amount * 0.88).toFixed(2)}. Thank you for shopping at HEB!`);
         } else {
-            console.log(`Hello ${shoppers[i].name}, your final total is ${shoppers[i].amount}. Thank you for shopping at HEB!`);
+            console.log(`Hello ${shoppers[i].name}, your final total is $${(shoppers[i].amount).toFixed(2)}. Thank you for shopping at HEB!`);
         }
     }
 
@@ -154,5 +154,6 @@ function showBookInfo(bookObject){
     console.log(`Title: ${bookObject.title} \nAuthor: ${bookObject.author.firstName} ${bookObject.author.lastName}`);
 }
 for (let i = 0; i < books.length; i++) {
-    console.log(showBookInfo(books[i]));
+    console.log(`Book # ${i+1}`);
+    showBookInfo(books[i]);
 }
