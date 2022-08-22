@@ -112,30 +112,32 @@ let texasInfo = [
 let fighter = {
     name: "Arata",
     hitPoints: 18,
-    maxDamage: 8,
-    attack: function (opponent){
-        console.log(`${opponent.name} has ${opponent.hitPoints}.`)
-        console.log(this.name + " attacks!");
-        var damage = Math.ceil(Math.random() * this.maxDamage);
-        console.log(this.name + " does " + damage + " points of damage!");
-        let damage = Math.ceil(Math.random() * this.maxDamage);
-        console.log(`${this.name} does ${damage} points of damage!`);
-        opponent.hitPoints -= damage;
-        console.log(`${opponent.name} now has ${opponent.hitPoints}.`)
-    }
+    maxDamage: 8
 }
 //"this" references the object that you are currently in
 
 let monster = {
     name: "Goblin",
     hitPoints: 8,
-    maxDamage: 6,
-    attack: function (opponent){
-        console.log(this.name + " attacks!");
-        var damage = Math.ceil(Math.random() * this.maxDamage);
-        console.log(this.name + " does " + damage + " points of damage!");
-    }
+    maxDamage: 6
 }
 //YOU CANNOT USE ARROW FUNCTIONS IN METHOD DEFINITIONS BECAUSE THEY CANNOT BIND "THIS" TO THE OBJECT!!!!!!!
 
 
+// controller object
+//controller will take user input and calculate its effect on the game.
+
+let controller = {
+    attack: function (attacker, defender) {
+        console.log(`${defender.name} has ${defender.hitPoints} hit points.`);
+        console.log(`${attacker.name} attacks!`);
+        let damage = Math.ceil(Math.random() * attacker.maxDamage);
+        console.log(`${attacker.name} does ${damage} hit points of damage!`);
+        defender.hitPoints -= damage;
+        console.log(`${defender.name} now has ${defender.hitPoints} hit points.`);
+        console.log(`---------------`);
+    }
+}
+
+controller.attack(fighter,monster);
+controller.attack(monster,fighter);
