@@ -42,3 +42,39 @@ for (let property /*called it x on w3schools*/ in currentWeather) {
 // each pair in an object is a property that has key: variable
 
 // an object that has a function as a variable is the foundations for a method.
+
+
+//Arrays of objects
+let hourlyWeather = [
+    {
+        time: "08:00",
+        temperature: 78.91,
+        feels_like: 78.91
+    },
+    {
+        time: "09:00",
+        temperature: 79.57,
+        feels_like: 79.57
+    },
+    {
+        time: "10:00",
+        temperature: 81.46,
+        feels_like: 86.04
+    },
+    {
+        time: "11:00",
+        temperature: 84.49,
+        feels_like: 89.24
+    }
+];
+
+//to access hourlyWeather[index].property
+
+//Looping over arrays of objects
+for (let i = 0; i < hourlyWeather.length; i++) {
+    console.log(`At ${hourlyWeather[i].time} the temperature will be ${hourlyWeather[i].temperature}.`)
+}
+
+hourlyWeather.forEach(function(forecast=>
+    console.log(`At ${forecast.time} the temperature will be ${forecast.temperature}, and feel like ${forecast.feels_like}.`);
+)

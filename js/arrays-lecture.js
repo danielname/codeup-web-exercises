@@ -37,7 +37,7 @@
 // // the function has up to three parameters: the element, the index, and the array.
 // // the second and third parameters are optional
 //
-// // prices.forEach(function(preice, index){
+// // prices.forEach(function(price, index){
 // //     console.log("item number " + index + " costs " + price)
 // // });
 //
