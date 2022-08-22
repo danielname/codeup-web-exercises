@@ -75,8 +75,9 @@ for (let i = 0; i < hourlyWeather.length; i++) {
     console.log(`At ${hourlyWeather[i].time} the temperature will be ${hourlyWeather[i].temperature}.`)
 }
 
-hourlyWeather.forEach(function(forecast=>
-    console.log(`At ${forecast.time} the temperature will be ${forecast.temperature}, and feel like ${forecast.feels_like}.`);
+hourlyWeather.forEach(function(forecast) {
+        console.log(`At ${forecast.time} the temperature will be ${forecast.temperature}, and feel like ${forecast.feels_like}.`);
+    }
 )
 
 //objects with object properties
@@ -109,35 +110,76 @@ let texasInfo = [
 
 //texasInfo[0].currentWeather.temp would return the current temperature in san antonio
 
-let fighter = {
-    name: "Arata",
-    hitPoints: 18,
-    maxDamage: 8
-}
+// let fighter = {
+//     name: "Arata",
+//     hitPoints: 18,
+//     maxDamage: 8
+// }
 //"this" references the object that you are currently in
 
-let monster = {
-    name: "Goblin",
-    hitPoints: 8,
-    maxDamage: 6
-}
+// let monster = {
+//     name: "Goblin",
+//     hitPoints: 8,
+//     maxDamage: 6
+// }
 //YOU CANNOT USE ARROW FUNCTIONS IN METHOD DEFINITIONS BECAUSE THEY CANNOT BIND "THIS" TO THE OBJECT!!!!!!!
 
 
 // controller object
 //controller will take user input and calculate its effect on the game.
+//
+// let controller = {
+//     attack: function (attacker, defender) {
+//         let damage = Math.ceil(Math.random() * attacker.maxDamage);
+//         view.displayAttackResults(attacker,defender,damage);
+//         defender.hitPoints -= damage;
+//     }
+// }
+//
+//
+//
+// let view = {
+//     displayAttackResults: function(attacker,defender,damage) {
+//         console.log(`${defender.name} has ${defender.hitPoints} hit points.`);
+//         console.log(`${attacker.name} attacks!`);
+//         console.log(`${attacker.name} does ${damage} hit points of damage!`);
+//         defender.hitPoints -= damage;
+//         console.log(`${defender.name} now has ${defender.hitPoints - damage} hit points.`);
+//         console.log(`---------------`);
+//     }
+// }
+
+// controller.attack(fighter,monster);
+// controller.attack(monster,fighter);
 
 let controller = {
     attack: function (attacker, defender) {
-        console.log(`${defender.name} has ${defender.hitPoints} hit points.`);
-        console.log(`${attacker.name} attacks!`);
+        let defenderHPBeforeDamage = defender.hitPoints;
         let damage = Math.ceil(Math.random() * attacker.maxDamage);
-        console.log(`${attacker.name} does ${damage} hit points of damage!`);
         defender.hitPoints -= damage;
-        console.log(`${defender.name} now has ${defender.hitPoints} hit points.`);
-        console.log(`---------------`);
+        view.displayAttackResults(attacker,defender,defenderHPBeforeDamage,damage);
     }
 }
 
-controller.attack(fighter,monster);
-controller.attack(monster,fighter);
+let view = {
+    displayAttackResults: function(attacker, defender, defenderHPBeforeAttack, damage){
+        console.log(`${defender.name} has ${defenderHPBeforeAttack} hit points`);
+        console.log(attacker.name + " attacks!");
+        console.log(`${attacker.name} does ${damage} hit points of damage!`);
+        console.log(`${defender.name} now has ${defenderHPBeforeAttack - damage} hit points.`);
+        console.log("-----------------");
+    }
+}
+
+let model = {
+    fighter: {
+        name: "Arata",
+        hitPoints: 18,
+        maxDamage: 8
+    },
+    monster: {
+        name: "Goblin",
+        hitPoints: 8,
+        maxDamage: 6
+    }
+}
