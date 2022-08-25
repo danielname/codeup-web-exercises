@@ -171,18 +171,18 @@ let view = {
     }
 }
 
-let model = {
-    fighter: {
-        name: "Arata",
-        hitPoints: 18,
-        maxDamage: 8
-    },
-    monster: {
-        name: "Goblin",
-        hitPoints: 8,
-        maxDamage: 6
-    }
-}
+// let model = {
+//     fighter: {
+//         name: "Arata",
+//         hitPoints: 18,
+//         maxDamage: 8
+//     },
+//     monster: {
+//         name: "Goblin",
+//         hitPoints: 8,
+//         maxDamage: 6
+//     }
+// }
 
 //creating objects
 //define an empty object and dynamically create properties
@@ -198,7 +198,7 @@ function makeMonster (name, hitPoints, maxDamage) {
     }
 }
 
-model.hobgoblin = makeMonster("Hobgoblin", 11, 11);
+// model.hobgoblin = makeMonster("Hobgoblin", 11, 11);
 
 
 //use object constructer
@@ -209,4 +209,30 @@ function Monster (name, hitPoints, maxDamage) {
     this.maxDamage = maxDamage;
 }
 
-model.hobgoblinCaptain = new Monster (`Hobgoblin Captain`, 39, 14);
+// model.hobgoblinCaptain = new Monster (`Hobgoblin Captain`, 39, 14);
+
+
+// object destructuring
+const car = {
+    make: "Toyota",
+    model: "Tacoma",
+    year: 2019,
+    milage: 12657
+}
+
+// let make = car.make;
+// let carModel = car.model;
+//
+// console.log(make);
+// console.log(carModel);
+
+// const {make, model, year, milage} = car;
+// console.log(make);
+// console.log(model);
+// console.log(year);
+// console.log(milage);
+
+const outputCarInfo = ({make, model, year, milage} = car) => {
+    console.log(`${year} ${make} ${model} with ${milage} miles`)
+}
+outputCarInfo()
