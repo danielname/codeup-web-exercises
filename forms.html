@@ -14,9 +14,17 @@
     <br>
     <textarea name="bio"></textarea>
     <h3>How did you hear about us?</h3>
+    <!--
     <input type="radio" name="how-did-you-hear-about-us" value="Billboard">Billboard<br>
     <input type="radio" name="how-did-you-hear-about-us" value="Radio Advetisement">Radio Advetisement<br>
     <input type="radio" name="how-did-you-hear-about-us" value="Other">Other<br>
+    -->
+    <select id="hear-about-us" name="hear-about-us[]" multiple>
+      <option value="billboard">Billboard</option>
+      <option value="radio-advertisement">Radio Advertisement</option>
+      <option value="other">Other</option>
+    </select>
+    <button type="submit">Submit</button>
   </form>
 </body>
 </html>
