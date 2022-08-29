@@ -10,9 +10,13 @@ forms have to be-->
   <form method="GET" action="https://request-inpector.glitch.me">
       <label for="username">Username:</label><br>
       <input id="username" name="username" type="text"><br>
+      <label for="password">Password</label><br>
+      <input type="password" name="password" id="password"><br>
       <input type="submit">
   </form>
-    <br>
+    <hr>
+
+
   <form method="GET" action="https://request-inpector.glitch.me">
       <label for="streetAddress">Street Address:</label>
       <br>
@@ -23,5 +27,68 @@ forms have to be-->
       <input type="text" name="city" id="city">
       <br>
       <input type="submit" value="Submit">
+  </form>
+      <hr>
+
+
+  <form method="POST" action="https://request-inpector.glitch.me">
+      <h3>Marvel or DC</h3>
+      <label for="marvel">Marvel</label>
+      <input type="radio" name="marvelOrDc" value="Marvel" id="marvel">
+      <br>
+      <label for="dc">DC</label>
+      <input type="radio" name="marvelOrDc" value="DC" id="dc">
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+  </form>
+<hr>
+
+  <form method="POST" action="https://request-inpector.glitch.me">
+      <h4>Choose your extras:</h4>
+      <input type="checkbox" name="extras" value="Provolone" id="provolone">
+      <label for="provolone">Provolone</label><br>
+      <input type="checkbox" name="extras" value="Cheddar" id="cheddar">
+      <label for="cheddar">Cheddar</label><br>
+      <input type="checkbox" name="extras" value="American Cheese" id="american">
+      <label for="american">American Cheese</label><br>
+      <input type="checkbox" name="extras" value="Swiss" id="swiss">
+      <label for="swiss">Swiss Cheese</label><br>
+      <input type="checkbox" name="extras" value="Pepper Jack" id="pepperJack">
+      <label for="pepperJack">Pepper Jack</label><br>
+      <input type="checkbox" name="extras" value="Jalapenos" id="jalapenos">
+      <label for="jalapenos">Sliced Jalapenos</label><br>
+      <input type="checkbox" name="extras" value="Mushrooms" id="mushrooms">
+      <label for="mushrooms">Sauteed Mushrooms</label><br>
+      <input type="checkbox" name="extras" value="Onions" id="onions">
+      <label for="onions">Grilled Onions</label><br>
+      <input type="checkbox" name="extras" value="Bacon" id="bacon">
+      <label for="bacon">Extra Bacon</label><br>
+      <input type="checkbox" name="extras" value="Guacamole" id="guacamole">
+      <label for="guacamole">Guacamole</label><br>
+      <input type="submit" value="Submit">
+  </form>
+    <hr>
+
+    <h4><label for="destination">Choose your destination:</label></h4>
+    <select name="destination" id="destination">
+        <option value="Hawaii">Hawaii</option>
+        <option value="Yucatan">Yucatan</option>
+        <option value="Greece">Greece</option>
+        <option value="Florida">Florida</option>
+        <option value="California">California</option>
+    </select>
+    <br>
+    <h4><label for="comments">Please leave your comments:</label></h4>
+    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+
+    <input type="date" name="date">
+    <input type="color" name="color">
+    <input type="hidden" name="userID" value="12345">
+
+
+    <input type="reset"><br>
+    <br>
+    <input type="submit" value="Submit">
 </body>
 </html>
