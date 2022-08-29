@@ -1,3 +1,42 @@
 h1 {
     color: purple;
+    text-align: center;
+}
+
+.fancy-header {
+    text-decoration-line: underline;
+    color: chocolate;
+}
+body {
+    background-color: aqua;
+    background-image: url("img/window.jpg");
+    font-family: Helvetica;
+}
+
+ul {
+    list-style: square;
+}
+table {
+    padding: 10px;
+}
+
+th {
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+a:link {
+    color: blue;
+}
+a:visited {
+    color: red;
+}
+a:hover {
+    color: green;
+}
+a:active {
+    color: violet;
 }
