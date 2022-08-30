@@ -1,0 +1,9 @@
+/*a style sheet that applies sitewide*/
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    font-family: sans-serif;
+}

@@ -115,10 +115,20 @@ function desirableNeighborhood(neighborhoodObject){
 // beeramid(5000, 3); // should === 16
 
 function beeramid (bonus,price){
-    let total = (bonus - (bonus % price))/price; //number of beers i can buy
-    let x;
-    for (let i = 0; total > ((1 / 3)*(i**3))+((1 / 2)*(i**2))+((1 / 6)*(i)); i++){
-        x = i;
+    let total = (bonus - (bonus % price))/price; //this line tells you how many cans of beer you can buy
+    let x = 0; //accumulator variable
+    for (let i = 0; total >= ((1 / 3)*(i**3))+((1 / 2)*(i**2))+((1 / 6)*(i)); i++){ //solved for a cubic function
+        x = i; //match the acumulator to the number of levels
     }
     return x;
 }
+
+// function beeramid (bonus,price) {
+//     let totalcost = 0;
+//     let levels = 0;
+//     while (totalcost <= bonus) {
+//         levels++
+//         totalcost += levels * levels * price;
+//     }
+//     return levels;
+// }
