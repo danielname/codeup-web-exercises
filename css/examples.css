@@ -1,0 +1,9 @@
+/*web safe fonts*/
+
+body{
+    font-family: Arial, Tahoma, "Trebuchet MS", Verdana, sans-serif;
+}
+
+p {
+    font-family: Georgia,"Times New Roman", serif;
+}
