@@ -23,7 +23,6 @@ a {
     flex-direction: row;
     justify-items: center;
     align-content: center;
-
     /* TODO: Make this a flex container and align it's items to the center*/
 }
 
