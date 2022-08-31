@@ -23,9 +23,8 @@ em {
     clear:both;
 }
 
-/*  selector for all "anchor" elements
+/*  selector for all "anchor" (a) elements
     that are a direct child of an element with class="article" */
-.article> {
+.article > a {
     float:right;
 }
-/* not sure about this one */

@@ -55,7 +55,7 @@ section:nth-of-type(1) {
 }
 section:nth-of-type(1) div:last-child {
     display: flex;
-    align-items: flex-start;
+    align-self: flex-start;
     /* enter needed declarations here */
 }
 
@@ -129,6 +129,7 @@ section:nth-of-type(6) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
     /* enter needed declarations here */
 }
 
