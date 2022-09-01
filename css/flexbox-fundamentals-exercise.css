@@ -41,7 +41,6 @@ h2, h3 {
 
 section {
     display: flex;
-    justify-content: space-evenly;
     /* enter needed declarations here */
 }
 
@@ -87,13 +86,13 @@ section:nth-of-type(3) {
 }
 
 section:nth-of-type(3) h3 {
-    margin-left: auto; /**/
-    align-items: flex-start;
+    justify-content: flex-start;
     /* enter needed declarations here */
 
 }
 
 .orange-circle {
+    justify-self: flex-end;
     background: orange;
     width: 2em;
     height: 2em;

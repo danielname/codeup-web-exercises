@@ -1,0 +1,7 @@
+main {
+    box-sizing: border-box; /*this will ensure that everything is contained in the width. It then makes padding and border fit into the space set in the width. Margins are external to the border, so they will not be contained in the border box.*/
+    width: 400px;
+    border: 1.5px solid black;
+    padding: 15px;
+    margin: 15px;
+}
