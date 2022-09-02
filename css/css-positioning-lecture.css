@@ -1,0 +1,13 @@
+#ipsum, #pirate, #quenya {
+    border: 1px solid black;
+    width: 25%;
+    float: left;
+    padding: 5px;
+    margin: 1rem;
+}
+img {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    z-index: -1;
+}
