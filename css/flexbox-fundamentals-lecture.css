@@ -1,13 +1,17 @@
 .flexbox {
     border: 1px solid black;
     padding: 5px;
-    height: 70vh;
+    height: 900px;
     display: flex;
     /*flex-direction: row;*/
     /*flex-wrap: wrap;*/
     flex-flow: row wrap;
     justify-content: space-around;
+    /*justify controlls the spacing along the main axis of the container*/
     align-items: flex-start;
+    /*align controls the spacing along the cross-axis of the container*/
+    align-content: flex-start;
+    /*aligt content is used to control space in and around flex lines (as in */
 }
 
 .flex-item {
