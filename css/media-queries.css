@@ -1,7 +1,7 @@
 @media screen and (max-width: 650px) {
     .hidden-on-desktop {
         box-sizing: border-box;
-        width: 90%;
+        width: calc(100% - 2em);
         background-color: cyan;
         border: .1rem solid #e5e5e5;
         ;

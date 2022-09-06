@@ -104,7 +104,7 @@ a {
     width: calc(25% - 25px);
 }
 .container {
-    height 2em;
+    height: 2em;
 }
 .media {
     width: 100%;
