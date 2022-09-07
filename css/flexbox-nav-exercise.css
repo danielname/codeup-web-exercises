@@ -1,0 +1,28 @@
+nav {
+    background-color: #c1c1c1;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+a {
+    display: inline-block;
+    font-family: "Work Sans";
+}
+
+nav * {
+    padding: 5px;
+    margin: 0 5px;
+}
+
+h1 {
+    margin: auto;
+    font-family: Montserrat;
+}
+
+a:hover {
+    color: blue;
+}

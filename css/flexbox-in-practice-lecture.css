@@ -1,0 +1,31 @@
+nav {
+    display: flex;
+    border: 1px solid black;
+    /*justify-content: space-around;*/
+}
+
+nav, a {
+    margin: 5px;
+    padding: 5px;
+}
+
+div {
+    border: 2px solid chartreuse;
+    border-radius: 7px;
+    padding: 20px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div a {
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    /*margin: auto;*/
+}
+
+nav a:nth-of-type(2), nav a:nth-of-type(4) {
+    margin-left: auto;
+}
