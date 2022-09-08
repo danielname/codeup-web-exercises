@@ -35,3 +35,14 @@ const users = [
         yearsOfExperience: 9
     }
 ];
+
+const threeLanguages = users.filter(languages => languages.length >= 3);
+
+const emails = users.map(x => x.email);
+
+const i = 0;
+const totalEXP = users.reduce((a,b) => a.yearsOfExperience + b.yearsOfExperience, i);
+
+const longestEmail = users.reduce((a,b) => a.length < b.length ? b : a, ``);
+
+const listOfNames = users.reduce((a,b) => a.name.concat(`, ${b.name}`), ``);

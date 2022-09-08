@@ -2,9 +2,8 @@
     .hidden-on-desktop {
         box-sizing: border-box;
         width: calc(100% - 2em);
-        background-color: cyan;
+        background-color: #b2eeee;
         border: .1rem solid #e5e5e5;
-        ;
     }
 
 }
