@@ -20,3 +20,7 @@ submitButton.onclick = function (){
         paragraphs[i].style.color = colorInput.value;
     }
 }
+
+let theHulk = document.getElementById(`hulk`);
+let hulkState = theHulk.getAttribute(`data-state`);
+theHulk.innerText += ` is in ${hulkState} state`;
