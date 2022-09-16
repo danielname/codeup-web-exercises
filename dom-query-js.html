@@ -24,6 +24,10 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<button id="set-header">Set Header</button>
+<button id="subheader-color">Set Subheader Color</button>
+<button id="color-list">Color the List</button>
+<button id="mission-accomplished">Mission Accomplished!</button>
 
 <script>
     (function() {
@@ -32,27 +36,73 @@
         let mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool"
+
         // TODO: Uncomment the next line and get the sub header element by id
         let subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = `#0000FF`;
+
         // TODO: Uncomment the next line and get all list items
         let listItems = document.getElementsByTagName("li");
 
         // TODO: Set text color on every other list item to grey
+
+        // TODO: Set text color of li with dbid = 1 to blue
+        // listItems[0].style.color = `#0000FF`;
+
+        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        let subParagraphs = document.getElementsByClassName(`sub-paragraph`);
+
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+
+
+    //the following makes the first button change the header from hellow world to javascript is cool.
+    let button1 = document.querySelector(`#set-header`);
+
+    function headerSwitch(){
+        mainHeader.innerText = "JavaScript is Cool";
+    }
+
+    button1.addEventListener(`click`, headerSwitch);
+
+
+    //the following makes the second button change the subheader color to blue
+    let button2 = document.querySelector(`#subheader-color`);
+
+    function subheadColor () {
+        subHeader.style.color = `#0000FF`;
+    }
+
+    button2.addEventListener(`click`, subheadColor);
+
+
+    //the following makes every onther list item gray
+    let button3 = document.querySelector(`#color-list`);
+
+    function listColors(){
         for (let i = 0; i < listItems.length; i += 2) {
             listItems[i].style.color = "grey";
         }
-        // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style.color = `#0000FF`;
+        listItems = Array.from(listItems);
+        listItems.forEach(function(listItem){
+            if (listItem.dataset.dbid === "1") {
+                listItem.style.color = "blue";
+            }
+        });
+    }
 
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName(`sub-paragraph`);
+    button3.addEventListener(`click`, listColors);
 
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished"
+
+    //the following changes the paragraph to say mission accomplished
+    let button4 = document.querySelector(`#mission-accomplished`);
+
+    function woohoo (){
+        subParagraphs[0].innerHTML = "Mission Accomplished";
+        }
+
+    button4.addEventListener(`click`, woohoo);
+
     })();
 </script>
 </body>
