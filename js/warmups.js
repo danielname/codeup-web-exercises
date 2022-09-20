@@ -132,3 +132,62 @@ function beeramid (bonus,price){
 //     }
 //     return levels;
 // }
+
+
+
+//// Given the attendance object, write a function that returns the total attendance across all teams.
+const attendance = {
+    miami: 32789,
+    buffalo: 45687,
+    portland: 24567
+}
+
+const ppl = Object.values(attendance).reduce((total,people)=>{
+    return total + people;
+},0)
+
+// Given the attendance object, write a function that returns the average attendance
+const avg = () => ppl / Object.entries(attendance).length;
+
+// Given the attendance object, write a function that returns an object with totalAttendance and averageAttendance properties set to the correct values
+
+const newObject = () => object = {totalAttendance: ppl,
+    averageAttendance: avg()};
+
+
+// Convert to Number
+//  * You prepare a list to send to the insurance company. As you finish, you notice you misformatted it.
+//  * Write a function named convertToNumber that takes in an object with at least one key/value pair, convert all the values to numbers.
+//  *
+//  * Examples
+//  *
+//  * convertToNumber({ piano: "200" }) ➞ { piano: 200 }
+//  * convertToNumber({ piano: "200", tv: "300" }) ➞ { piano: 200, tv: 300 }
+//  * convertToNumber({ piano: "200", tv: "300", stereo: "400" }) ➞ { piano: 200, tv: 300, stereo: 400 }
+//  */
+function convertToNumber (object){
+    for(x in object){
+
+    }
+}
+
+/*
+ * Convert Address to Object
+ * Write a function named convertAddressToObject that accepts a string that contains a street number (as a string) and street name separated by a space characters, and returns an object with properties streetNumber and streetName.
+ *
+ * Examples
+ *
+ * >> convertAddressToObject('8646 Sunny Oaks') ➞ {streetNumber: '8646', streetName: 'Sunny Oaks'}
+ * >> convertAddressToObject('5408 Villa Nueva') ➞ {streetNumber: '5408', streetName: 'Villa Nueva'}
+ */
+
+function convertAddressToObject (string) {
+    let stringArray = string.split(` `);
+    for (let i = 1; i < stringArray.length - 1; i++){
+
+            stringArray[i] += ` ${stringArray[i + 1]}`;
+            stringArray.splice(i + 1,1);
+            i--;
+    }
+    return objec = {streetNumber: stringArray[0], streetName: stringArray[1]};
+}

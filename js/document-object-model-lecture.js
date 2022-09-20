@@ -40,3 +40,11 @@ transformButton.onclick = function() {
     }
     theHulk.innerText = `The Hulk is in ${hulkState} state.`
 }
+
+function hdhdsh(input){
+    /input/g
+}
+let emptyArray = []
+for (let i = 0; i < coffees.length; i++) {
+    emptyArray = emptyArray.push(`${coffees[i].name}`);
+}
