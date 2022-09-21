@@ -7,11 +7,25 @@
 
 </head>
 <body>
+    <h1 class="hearer codeup" id="main-header">This is a main header</h1>
+    <p class="text" id="first-paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto commodi consectetur consequatur cupiditate delectus eligendi eum fuga hic incidunt ipsum laborum magni, quis reiciendis rem sapiente sed sunt vero.
+    </p>
+    <ul class="list" id="list">
+        <li class="list-item" id="first-list-item codeup">First list item</li>
+        <li class="list-item" id="second-list-item">Second list item</li>
+        <li class="list-item" id="third-list-item">Third list item</li>
+    </ul>
+    <div class="text codeup" id="second-paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid cupiditate delectus excepturi exercitationem illum nisi nobis quas quisquam velit. Ab distinctio dolorum iste minus necessitatibus obcaecati sed. Autem, cupiditate.
+    </div>
     <script src="js/jquery-3.6.1.min.js"></script>
     <script>
-        $(function() {
-            alert( 'The DOM has finished loading!' );
-        });
+        $(`li`).css(`font-size`, `20px`);
+        $(`h1, p, li`).css(`background-color`, `yellow`);
+        $(function (){
+            alert(`This is a main header`)
+        })
     </script>
 </body>
 </html>
