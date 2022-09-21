@@ -206,5 +206,9 @@ function convertAddressToObject (string) {
  */
 
 function totalPets (arrayOfObjects) {
-
+    let number = arrayOfObjects.reduce((total, person)=>{
+        return total + person.pets;
+    }, 0)
+    return number;
 }
+
