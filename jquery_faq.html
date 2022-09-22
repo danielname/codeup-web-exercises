@@ -37,13 +37,49 @@
         <dt>How do I reserve a tour in a park?</dt>
         <dd class="invisible">You can book some park tours through Recreation.gov such as Pearl Harbor National Memorial, many Mammoth Cave National Park cave tours, Independence National Historical Park tours, and more. Not all parks participate in this reservation service. For more information on tours offered at a specific park, please see the park search.</dd>
     </dl>
+    <h3>Big Bend National Park</h3>
+    <ul>
+        <li>Rock of volcanic origin dominates much of the visual landscape in Big Bend National Park. The first of a series of volcanic eruptions occurred approximately 42 mya near the present northwest boundary of the park.</li>
+        <li>From 500 million years ago (mya) through approximately 300 million years ago the Big Bend area was near the western portion of a deep-ocean trough that extended from present-day Arkansas and Oklahoma to West Texas. From highlands in the north, eroded gravels, sand, and clay gradually accumulated in layers within this trough and, in time, became beds of sandstone and shale.</li>
+        <li>Most of the visible surface of Big Bend National Park is relatively young when compared to the age of the Earth, which most geologists accept as being approximately 4.6 billion years. There are materials present that date from about 500 million years ago; however, most exposed rock throughout the park is 100 million years or less in age.
+        </li>
+        <li>Geologic forces continue to shape the landscape of Big Bend. Today, weathering and erosion are the primary agents of change. Wind and water, often aided by suspended abrasive materials, minerals, or acids, have combined their efforts to produce the landscapes and features we enjoy today.</li>
+    </ul>
+    <h3>Big Thicket National Preserve</h3>
+    <ul>
+        <li>Big Thicket National Preserve in southeast Texas offers 40 miles of hiking trails, camping, canoeing, kayaking, and plentiful bird-watching.</li>
+        <li>The preserve was established to protect its complex biological diversity. What is extraordinary is not the rarity or abundance of its life forms, but how many species coexist here. Once vast, this combination of pine and cypress forest, hardwood forest, meadow, and blackwater swamp is but a remnant.</li>
+        <li>A convergence of ecosystems occurred here during the last Ice Age. It brought together, in one geographical location, the eastern hardwood forests, the Gulf coastal plains, and the midwest prairies.</li>
+        <li>On December 15, 1981, the Preserve was designated an International Biosphere Reserve by the United Nations Education, Scientific and Cultural Organization (UNESCO) Man and the Biosphere Program. On July 26, 2001, the American Bird Conservancy recognized the Preserve as a Globally Important Bird Area, joining thousands of others around the world.</li>
+    </ul>
+    <h3>San Antonio Missions National Historical Park</h3>
+    <ul>
+        <li>The legacy and history of San Antonio began with a simple ceremony when, in 1718, Franciscans and Spanish representatives established the first mission.</li>
+        <li>The missions purpose was to acculturate and Christianize the native population and make them Spanish citizens.</li>
+        <li>Four Spanish frontier missions, part of a colonization system that stretched across the Spanish Southwest in the 17th, 18th, and 19th centuries, are preserved here. They include Missions San José, San Juan, Espada, and Concepción.</li>
+        <li>The park, containing many cultural sites and natural areas, was established in 1978.</li>
+    </ul>
     <button class="toggle">CLICK HERE</button>
+    <button class="traversal-button">BIG BUTTON</button>
     <script src="js/jquery-3.6.1.min.js"></script>
     <script>
         // $('.invisible').css('visibility', 'hidden');
         $('.toggle').on(`click`,function (){
             $('dd').toggleClass(`invisible`);
-        })
+        });
+        $('.traversal-button').on('click',function(){
+           $('ul').children().each(function(index){
+               if(index % 4 === 3) {
+                   $(this).css('background-color', 'yellow');
+               }}
+           )
+        });
+        $('h3').on('click',function(){
+           $(this).next().children().first().css('font-weight', 'bold');
+        });
+        $('li').on('click', function (){
+            $(this).parent().children().first().css('color','blue');
+        });
     </script>
 </body>
 </html>
