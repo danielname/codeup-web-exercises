@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Maps API</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocoder-utils.js"></script>
+
+</head>
+<body>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <script>
+        let restaurantArray = [{name: 'Taco Nando',
+                                address: '2820 Nogalitos St, San Antonio, TX 78225'
+                                }, {name: 'Chester\'s Hamburgers',
+                                address: '9980 I-10, San Antonio, TX 78230'
+                                }, {name: 'Hu Hot',
+                                address: '12710 W I-10, San Antonio, TX 78230'
+                                }];
+
+        mapboxgl.accessToken = EXERCISE_KEY;
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [-98.49567610253364, 29.428106704221186], // starting position [lng, lat]
+            zoom: 20, // starting zoom
+            projection: 'globe' // display the map as a 3D globe
+        });
+        map.on('style.load', () => {
+            map.setFog({}); // Set the default atmosphere style
+        });
+        restaurantArray.forEach(function(element){
+            geocode(element.address, EXERCISE_KEY).then(function(result) {
+                // map.setCenter(result);
+                map.setZoom(15);
+                const restaurantMarker = new mapboxgl.Marker()
+                    .setLngLat(result)
+                    .addTo(map);
+                const restaurantPopup = new mapboxgl.Popup().setHTML(`<p class="mt-3" style="width: 200px;">${element.name}</p>`);
+                restaurantMarker.setPopup(restaurantPopup);
+            });
+        });
+    </script>
+</body>
+</html>
