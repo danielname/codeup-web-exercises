@@ -7,7 +7,7 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
     <script src="js/keys.js"></script>
     <script src="js/mapbox-geocoder-utils.js"></script>
-
+    <script src="js/jquery-3.6.1.min.js"></script>
 </head>
 <body>
     <div id='map' style='width: 400px; height: 300px;'></div>
@@ -25,7 +25,7 @@
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
             center: [-98.49567610253364, 29.428106704221186], // starting position [lng, lat]
-            zoom: 20, // starting zoom
+            zoom: 10, // starting zoom
             projection: 'globe' // display the map as a 3D globe
         });
         map.on('style.load', () => {
@@ -33,15 +33,40 @@
         });
         restaurantArray.forEach(function(element){
             geocode(element.address, EXERCISE_KEY).then(function(result) {
-                // map.setCenter(result);
-                map.setZoom(15);
+                map.setZoom(9);
                 const restaurantMarker = new mapboxgl.Marker()
                     .setLngLat(result)
                     .addTo(map);
+                console.log(restaurantMarker)
                 const restaurantPopup = new mapboxgl.Popup().setHTML(`<p class="mt-3" style="width: 200px;">${element.name}</p>`);
                 restaurantMarker.setPopup(restaurantPopup);
             });
         });
+
+        //hopping bonus
+
+        // need to set lng each iteration of the interval and reset the marker.
+        $('div').on('click', '.mapboxgl-marker',function(){
+            let functionArray = ['-((x-2)**2)+4', '(-3/4)((x-2)**2)+3', '(-9/16)((x-2)**2)+9/4', '(-27/64)((x-2)**2)+27/16', '(-81/256)((x-2)**2)+81/64', '(-243/1024)((x-2)**2)+243/256'];
+            let latitude = result.lngLat.lat; //need to figure out the reference to these in the code
+            let height = result.lngLat.lng;
+            for (let i = 0; i < functionArray.length; i++){
+                let x = 0;
+                let y = 0;
+                let intervalHop = setInterval(function(){
+                    if (y === 0 && x > 0){
+                        clearInterval(intervalHop);
+                    } else {
+                        height -= (y/100);
+                        x += 0.01;
+                        y = eval(functionArray[i]);
+                        height += (y/100);
+                        $(this).setLngLat(height,latitude);
+                    }
+                }, 1)
+            }
+        });
+
     </script>
 </body>
 </html>
