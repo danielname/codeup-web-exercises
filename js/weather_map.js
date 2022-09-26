@@ -1,16 +1,22 @@
 $(function (){
-    $.get(`https://api.openweathermap.org/data/3.0/onecall?lat={29.423017}&lon={-98.48527}&appid={${OPEN_WEATHER_APPID}}`).done(function(data){
-        console.log(data)
-    });
-
-    // $.get("http://api.openweathermap.org/data/2.5/forecast", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     lat:    29.423017,
-    //     lon:   -98.48527,
-    //     units: "imperial"
-    // }).done(function(data) {
+    // $.get(`https://api.openweathermap.org/data/3.0/onecall?lat={29.423017}&lon={-98.48527}&appid={${OPEN_WEATHER_APPID}}`).done(function(data){
     //     console.log(data)
     // });
+
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        APPID: OPEN_WEATHER_APPID,
+        lat:    29.423017,
+        lon:   -98.48527,
+        units: "imperial"
+    }).done(function(data) {
+        console.log(data)
+        // $('main').html(`<p>The current temperature in ${data.city.name} is ${data.list[0].main.temp} degrees farenheit.</p><p></p>`)
+        $('#date-one').text(data.list[0].dt_txt.slice(0,10));
+        $('#date-two').text(data.list[8].dt_txt.slice(0,10));
+        $('#date-three').text(data.list[16].dt_txt.slice(0,10));
+        $('#date-four').text(data.list[24].dt_txt.slice(0,10));
+        $('#date-five').text(data.list[32].dt_txt.slice(0,10));
+    });
 
     function windCardinalDirection(degrees){
         let cardinalDirection = '';
