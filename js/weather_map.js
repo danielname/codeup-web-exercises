@@ -10,12 +10,91 @@ $(function (){
         units: "imperial"
     }).done(function(data) {
         console.log(data)
-        // $('main').html(`<p>The current temperature in ${data.city.name} is ${data.list[0].main.temp} degrees farenheit.</p><p></p>`)
+        function averageWind1(){
+            let pNumber = 0;
+            for (let i = 0; i < 8; i++){
+                pNumber += data.list[i].main.wind.speed;
+            }
+            return parseInt(pNumber/8);
+        }
+        function averageWind2(){
+            let pNumber = 0;
+            for (let i = 8; i < 16; i++){
+                pNumber += data.list[i].main.wind.speed;
+            }
+            return parseInt(pNumber/8);
+        }
+        function averageWind3(){
+            let pNumber = 0;
+            for (let i = 16; i < 24; i++){
+                pNumber += data.list[i].main.wind.speed;
+            }
+            return parseInt(pNumber/8);
+        }
+        function averageWind4(){
+            let pNumber = 0;
+            for (let i = 24; i < 32; i++){
+                pNumber += data.list[i].main.wind.speed;
+            }
+            return parseInt(pNumber/8);
+        }
+        function averageWind5(){
+            let pNumber = 0;
+            for (let i = 32; i < 40; i++){
+                pNumber += data.list[i].main.wind.speed;
+            }
+            return parseInt(pNumber/8);
+        }
+        function averagePressure1(){
+            let pNumber = 0;
+            for (let i = 0; i < 8; i++){
+                pNumber += data.list[i].main.pressure;
+            }
+            return parseInt(pNumber/8);
+        }
+        function averagePressure2(){
+            let pNumber = 0;
+            for (let i = 8; i < 16; i++){
+                pNumber += data.list[i].main.pressure;
+            }
+            return parseInt(pNumber/8);
+        }
+        function averagePressure3(){
+            let pNumber = 0;
+            for (let i = 16; i < 24; i++){
+                pNumber += data.list[i].main.pressure;
+            }
+            return parseInt(pNumber/8);
+        }
+        function averagePressure4(){
+            let pNumber = 0;
+            for (let i = 24; i < 32; i++){
+                pNumber += data.list[i].main.pressure;
+            }
+            return parseInt(pNumber/8);
+        }
+        function averagePressure5(){
+            let pNumber = 0;
+            for (let i = 32; i < 40; i++){
+                pNumber += data.list[i].main.pressure;
+            }
+            return parseInt(pNumber/8);
+        }
         $('#date-one').text(data.list[0].dt_txt.slice(0,10));
         $('#date-two').text(data.list[8].dt_txt.slice(0,10));
         $('#date-three').text(data.list[16].dt_txt.slice(0,10));
         $('#date-four').text(data.list[24].dt_txt.slice(0,10));
         $('#date-five').text(data.list[32].dt_txt.slice(0,10));
+        $('#day1-pressure').text(`Pressure: ${averagePressure1()}`);
+        $('#day2-pressure').text(`Pressure: ${averagePressure2()}`);
+        $('#day3-pressure').text(`Pressure: ${averagePressure3()}`);
+        $('#day4-pressure').text(`Pressure: ${averagePressure4()}`);
+        $('#day5-pressure').text(`Pressure: ${averagePressure5()}`);
+        $('#day1-wind').text(`Wind: ${averageWind1()}`);
+        $('#day2-wind').text(`Wind: ${averageWind2()}`);
+        $('#day3-wind').text(`Wind: ${averageWind3()}`);
+        $('#day4-wind').text(`Wind: ${averageWind4()}`);
+        $('#day5-wind').text(`Wind: ${averageWind5()}`);
     });
 
     function windCardinalDirection(degrees){

@@ -25,3 +25,21 @@ function capitalizeName (string) {
     }
     return stringArray.join('');
 }
+
+/* -------------------------------------------------------------------------------------------------*/
+// array parsing
+// the following function finds the most frequently appearing item in an array
+function mostFrequent(array){
+    const arrayElementsCount = array.reduce(function(total, element){
+        if (!total[element]) {
+            total[element] = 1;
+        } else {
+            total[element] = total[element] + 1;
+        }
+        return total;
+    }, {});
+    const arraySorted = Object.entries(arrayElementsCount).sort(function(a, b){
+        return b[1] - a[1];
+    });
+    return arraySorted[0][0];
+}
