@@ -9,38 +9,6 @@ $(function (){
         lon:   -98.48527,
         units: "imperial"
     }).done(function(data) {
-        console.log(data)
-        let descriptionArray = [];
-        function loadDescriptionArray1(){
-            for (let i = 0; i < 8; i++){
-                descriptionArray.push(data.list[i].weather[0].description);
-            }
-            return descriptionArray;
-        }
-        function loadDescriptionArray2(){
-            for (let i = 8; i < 16; i++){
-                descriptionArray.push(data.list[i].weather[0].description);
-            }
-            return descriptionArray;
-        }
-        function loadDescriptionArray3(){
-            for (let i = 16; i < 24; i++){
-                descriptionArray.push(data.list[i].weather[0].description);
-            }
-            return descriptionArray;
-        }
-        function loadDescriptionArray4(){
-            for (let i = 24; i < 32; i++){
-                descriptionArray.push(data.list[i].weather[0].description);
-            }
-            return descriptionArray;
-        }
-        function loadDescriptionArray5(){
-            for (let i = 32; i < 40; i++){
-                descriptionArray.push(data.list[i].weather[0].description);
-            }
-            return descriptionArray;
-        }
         function mostFrequent(array){
             const arrayElementsCount = array.reduce(function(total, element){
                 if (!total[element]) {
@@ -54,6 +22,122 @@ $(function (){
                 return b[1] - a[1];
             });
             return arraySorted[0][0];
+        }
+        console.log(data)
+        function hiLow1(){
+            let utilArray = [];
+            let high = 0;
+            let low = 10000;
+            for (let i = 0; i < 8; i++){
+                if (data.list[i].main.temp_max > high) {
+                    high = data.list[i].main.temp_max;
+                }
+                if (data.list[i].main.temp_min < low){
+                    low = data.list[i].main.temp_min;
+                }
+                utilArray.push(data.list[i].weather[0].icon);
+            }
+            return `<p className="card-text">${low}&deg;F/${high}&deg;F</p>
+        <br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`;
+        }
+        function hiLow2(){
+            let utilArray = [];
+            let high = 0;
+            let low = 10000;
+            for (let i = 8; i < 16; i++){
+                if (data.list[i].main.temp_max > high) {
+                    high = data.list[i].main.temp_max;
+                }
+                if (data.list[i].main.temp_min < low){
+                    low = data.list[i].main.temp_min;
+                }
+                utilArray.push(data.list[i].weather[0].icon);
+            }
+            return `<p className="card-text">${low}&deg;F/${high}&deg;F</p>
+        <br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`;
+        }
+        function hiLow3(){
+            let utilArray = [];
+            let high = 0;
+            let low = 10000;
+            for (let i = 16; i < 24; i++){
+                if (data.list[i].main.temp_max > high) {
+                    high = data.list[i].main.temp_max;
+                }
+                if (data.list[i].main.temp_min < low){
+                    low = data.list[i].main.temp_min;
+                }
+                utilArray.push(data.list[i].weather[0].icon);
+            }
+            return `<p className="card-text">${low}&deg;F/${high}&deg;F</p>
+        <br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`;
+        }
+        function hiLow4(){
+            let utilArray = [];
+            let high = 0;
+            let low = 10000;
+            for (let i = 24; i < 32; i++){
+                if (data.list[i].main.temp_max > high) {
+                    high = data.list[i].main.temp_max;
+                }
+                if (data.list[i].main.temp_min < low){
+                    low = data.list[i].main.temp_min;
+                }
+                utilArray.push(data.list[i].weather[0].icon);
+            }
+            return `<p className="card-text">${low}&deg;F/${high}&deg;F</p>
+        <br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`;
+        }
+        function hiLow5(){
+            let utilArray = [];
+            let high = 0;
+            let low = 10000;
+            for (let i = 32; i < 40; i++){
+                if (data.list[i].main.temp_max > high) {
+                    high = data.list[i].main.temp_max;
+                }
+                if (data.list[i].main.temp_min < low){
+                    low = data.list[i].main.temp_min;
+                }
+                utilArray.push(data.list[i].weather[0].icon);
+            }
+            return `<p className="card-text">${low}&deg;F/${high}&deg;F</p>
+        <br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`;
+        }
+        function loadDescriptionArray1(){
+            let utilArray = [];
+            for (let i = 0; i < 8; i++){
+                utilArray.push(data.list[i].weather[0].description);
+            }
+            return utilArray;
+        }
+        function loadDescriptionArray2(){
+            let utilArray = [];
+            for (let i = 8; i < 16; i++){
+                utilArray.push(data.list[i].weather[0].description);
+            }
+            return utilArray;
+        }
+        function loadDescriptionArray3(){
+            let utilArray = [];
+            for (let i = 16; i < 24; i++){
+                utilArray.push(data.list[i].weather[0].description);
+            }
+            return utilArray;
+        }
+        function loadDescriptionArray4(){
+            let utilArray = [];
+            for (let i = 24; i < 32; i++){
+                utilArray.push(data.list[i].weather[0].description);
+            }
+            return utilArray;
+        }
+        function loadDescriptionArray5(){
+            let utilArray = [];
+            for (let i = 32; i < 40; i++){
+                utilArray.push(data.list[i].weather[0].description);
+            }
+            return utilArray;
         }
         function averageWind1(){
             let pNumber = 0;
@@ -257,7 +341,10 @@ $(function (){
         $('#day3-description').text(`Description: ${mostFrequent(loadDescriptionArray3())}`);
         $('#day4-description').text(`Description: ${mostFrequent(loadDescriptionArray4())}`);
         $('#day5-description').text(`Description: ${mostFrequent(loadDescriptionArray5())}`);
-
+        $('#hi-low1').html(hiLow1());
+        $('#hi-low2').html(hiLow2());
+        $('#hi-low3').html(hiLow3());
+        $('#hi-low4').html(hiLow4());
+        $('#hi-low5').html(hiLow5());
     });
-
-})
+});
