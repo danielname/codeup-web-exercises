@@ -131,106 +131,86 @@ function updateScreen(){
             return `<p className="card-text">${low}&deg;F/${high}&deg;F</p>
         <br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`;
         });
-        function loadDescriptionArray1(){
+        $('#day1-description').text(() => {
             let utilArray = [];
             for (let i = 0; i < 8; i++){
                 utilArray.push(data.list[i].weather[0].description);
             }
-            return mostFrequent(utilArray);
-        }
-        function loadDescriptionArray2(){
+            return `Description: ${mostFrequent(utilArray)}`;
+        });
+        $('#day2-description').text(() => {
             let utilArray = [];
             for (let i = 8; i < 16; i++){
                 utilArray.push(data.list[i].weather[0].description);
             }
-            return mostFrequent(utilArray);
-        }
-        function loadDescriptionArray3(){
+            return `Description: ${mostFrequent(utilArray)}`;
+        });
+        $('#day3-description').text(() => {
             let utilArray = [];
             for (let i = 16; i < 24; i++){
                 utilArray.push(data.list[i].weather[0].description);
             }
-            return mostFrequent(utilArray);
-        }
-        function loadDescriptionArray4(){
+            return `Description: ${mostFrequent(utilArray)}`;
+        });
+        $('#day4-description').text(() => {
             let utilArray = [];
             for (let i = 24; i < 32; i++){
                 utilArray.push(data.list[i].weather[0].description);
             }
-            return mostFrequent(utilArray);
-        }
-        function loadDescriptionArray5(){
+            return `Description: ${mostFrequent(utilArray)}`;
+        });
+        $('#day5-description').text(() => {
             let utilArray = [];
             for (let i = 32; i < 40; i++){
                 utilArray.push(data.list[i].weather[0].description);
             }
-            return mostFrequent(utilArray);
-        }
-        $('#day1-wind').text(function averageWind1(){
+            return `Description: ${mostFrequent(utilArray)}`;
+        });
+        $('#day1-wind').text(() => {
             let pNumber = 0;
             let qNumber = 0;
             for (let i = 0; i < 8; i++){
                 pNumber += data.list[i].wind.speed;
                 qNumber += data.list[i].wind.deg;
             }
-            return `Wind: ${(pNumber/8).toFixed(2)} ${windCardinalDirection(parseInt(pNumber/8))}`;
+            return `Wind: ${(pNumber/8).toFixed(2)} ${windCardinalDirection(parseInt(qNumber/8))}`;
         });
-        function averageWind2(){
+        $('#day2-wind').text(() => {
             let pNumber = 0;
+            let qNumber = 0;
             for (let i = 8; i < 16; i++){
                 pNumber += data.list[i].wind.speed;
+                qNumber += data.list[i].wind.deg;
             }
-            return (pNumber/8).toFixed(2);
-        }
-        function averageWind2dir(){
+            return `Wind: ${(pNumber/8).toFixed(2)} ${windCardinalDirection(parseInt(qNumber/8))}`;
+        });
+        $('#day3-wind').text(() => {
             let pNumber = 0;
-            for (let i = 8; i < 16; i++){
-                pNumber += data.list[i].wind.deg;
-            }
-            return windCardinalDirection(parseInt(pNumber/8));
-        }
-        function averageWind3(){
-            let pNumber = 0;
+            let qNumber = 0;
             for (let i = 16; i < 24; i++){
                 pNumber += data.list[i].wind.speed;
+                qNumber += data.list[i].wind.deg;
             }
-            return (pNumber/8).toFixed(2);
-        }
-        function averageWind3dir(){
+            return `Wind: ${(pNumber/8).toFixed(2)} ${windCardinalDirection(parseInt(qNumber/8))}`;
+        });
+        $('#day4-wind').text(() => {
             let pNumber = 0;
-            for (let i = 16; i < 24; i++){
-                pNumber += data.list[i].wind.deg;
-            }
-            return windCardinalDirection(parseInt(pNumber/8));
-        }
-        function averageWind4(){
-            let pNumber = 0;
+            let qNumber = 0;
             for (let i = 24; i < 32; i++){
                 pNumber += data.list[i].wind.speed;
+                qNumber += data.list[i].wind.deg;
             }
-            return (pNumber/8).toFixed(2);
-        }
-        function averageWind4dir(){
+            return `Wind: ${(pNumber/8).toFixed(2)} ${windCardinalDirection(parseInt(qNumber/8))}`;
+        });
+        $('#day5-wind').text(() => {
             let pNumber = 0;
-            for (let i = 24; i < 32; i++){
-                pNumber += data.list[i].wind.deg;
-            }
-            return windCardinalDirection(parseInt(pNumber/8));
-        }
-        function averageWind5(){
-            let pNumber = 0;
+            let qNumber = 0;
             for (let i = 32; i < 40; i++){
                 pNumber += data.list[i].wind.speed;
+                qNumber += data.list[i].wind.deg;
             }
-            return (pNumber/8).toFixed(2);
-        }
-        function averageWind5dir(){
-            let pNumber = 0;
-            for (let i = 32; i < 40; i++){
-                pNumber += data.list[i].wind.deg;
-            }
-            return windCardinalDirection(parseInt(pNumber/8));
-        }
+            return `Wind: ${(pNumber/8).toFixed(2)} ${windCardinalDirection(parseInt(qNumber/8))}`;
+        });
         function windCardinalDirection(degrees){
             let cardinalDirection = '';
             if ((degrees > 348.75 && degrees <= 360) || (degrees >=0 && degrees <= 11.25)){
@@ -343,15 +323,6 @@ function updateScreen(){
         $('#date-three').text(data.list[16].dt_txt.slice(0,10));
         $('#date-four').text(data.list[24].dt_txt.slice(0,10));
         $('#date-five').text(data.list[32].dt_txt.slice(0,10));
-        $('#day2-wind').text(`Wind: ${averageWind2()} ${averageWind2dir()}`);
-        $('#day3-wind').text(`Wind: ${averageWind3()} ${averageWind3dir()}`);
-        $('#day4-wind').text(`Wind: ${averageWind4()} ${averageWind4dir()}`);
-        $('#day5-wind').text(`Wind: ${averageWind5()} ${averageWind5dir()}`);
-        $('#day1-description').text(`Description: ${loadDescriptionArray1()}`);
-        $('#day2-description').text(`Description: ${loadDescriptionArray2()}`);
-        $('#day3-description').text(`Description: ${loadDescriptionArray3()}`);
-        $('#day4-description').text(`Description: ${loadDescriptionArray4()}`);
-        $('#day5-description').text(`Description: ${loadDescriptionArray5()}`);
 
         reverseGeocode({lat: latDefault, lng: lngDefault}, WEATHER_MAP_TOKEN).then(function(reverseResults){
             stateNameUSA = String(String(reverseResults.split(', ')[2]).split(' ')[0]);
