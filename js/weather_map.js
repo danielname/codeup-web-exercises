@@ -369,11 +369,6 @@ $(function (){
                 lngDefault = result[0];
                 let stateNameUSA = '';
                 map.setCenter([lngDefault,latDefault]);
-                reverseGeocode({lat: latDefault, lng: lngDefault}, WEATHER_MAP_TOKEN).then(function(reverseResults){
-                    console.log(reverseResults)
-                    stateNameUSA = String(String(reverseResults.split(', ')[2]).split(' ')[0]);
-                    console.log(stateNameUSA)
-                })
                 $.get("http://api.openweathermap.org/data/2.5/forecast", {
                     APPID: OPEN_WEATHER_APPID,
                     lat:    latDefault,
@@ -717,8 +712,14 @@ $(function (){
                     $('#hi-low3').html(hiLow3());
                     $('#hi-low4').html(hiLow4());
                     $('#hi-low5').html(hiLow5());
-                    // $('#current-city').text(`${data.city.name}, `)
-
+                    reverseGeocode({lat: latDefault, lng: lngDefault}, WEATHER_MAP_TOKEN).then(function(reverseResults){
+                        stateNameUSA = String(String(reverseResults.split(', ')[2]).split(' ')[0]);
+                        if (data.city.country === 'US') {
+                            $('#current-city').text(`${data.city.name}, ${stateNameUSA}, USA`);
+                        } else{
+                            $('#current-city').text(`${data.city.name}, ${data.city.country}`);
+                        }
+                    })
                 });
             });
         }
