@@ -11,13 +11,16 @@ $(function (){
         projection: 'globe' // display the map as a 3D globe
     });
 
-    // map.on('dblclick', e => {
-    //
-    //     console.log(e);
-    //     let lngLat = marker.getLngLat();
-    //     console.log(`Longitude: ${lngLat.lng}, Latitude: ${lngLat.lat}`);
-    // e.lngLat.lng, e.lngLat.lat
-    // })
+    map.on('dblclick', e => {
+        const marker = new mapboxgl.Marker({
+            color: "#FF0000",
+            draggable: true
+        }).setLngLat([e.lngLat.lng, e.lngLat.lat])
+            .addTo(map);
+        latDefault = e.lngLat.lat;
+        lngDefault = e.lngLat.lng;
+        updateScreen()
+    })
     const marker = new mapboxgl.Marker({
         color: "#FF0000",
         draggable: true
