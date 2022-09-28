@@ -1,9 +1,9 @@
 
 // Numbers
 // the following function checks if the argument is a number
-isNumber(arg){
-    return !(isNaN(arg) || typeof arg === `boolean` || arg === null);
-}
+// isNumber(arg){
+//     return !(isNaN(arg) || typeof arg === `boolean` || arg === null);
+// }
 
 // the following function accepts an array of numbers and returns the average of those numbers.
 function average(array){
