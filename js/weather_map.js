@@ -12,6 +12,7 @@ $(function (){
     });
 
     map.on('dblclick', e => {
+        $('.mapboxgl-marker').html('');
         const marker = new mapboxgl.Marker({
             color: "#FF0000",
             draggable: true
@@ -19,7 +20,7 @@ $(function (){
             .addTo(map);
         latDefault = e.lngLat.lat;
         lngDefault = e.lngLat.lng;
-        updateScreen()
+        updateScreen();
     })
     const marker = new mapboxgl.Marker({
         color: "#FF0000",
