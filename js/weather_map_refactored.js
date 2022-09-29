@@ -3,7 +3,7 @@ $(function (){
     const Defaults = {
         lat: 29.428106704221186,
         lng: -98.49567610253364,
-        update: function(){
+        update(){
             $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 APPID: OPEN_WEATHER_APPID,
                 lat:    Defaults.lat,
