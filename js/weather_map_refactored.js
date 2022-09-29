@@ -24,24 +24,74 @@ $(function (){
                     });
                     return arraySorted[0][0];
                 }
+                function windCardinalDirection(degrees){
+                    let cardinalDirection = '';
+                    if ((degrees > 348.75 && degrees <= 360) || (degrees >=0 && degrees <= 11.25)){
+                        cardinalDirection = "N";
+                    } else if (degrees > 11.25 && degrees  <= 33.75) {
+                        cardinalDirection = "NNE";
+                    } else if (degrees > 33.75 && degrees <= 56.25) {
+                        cardinalDirection = "NE";
+                    } else if (degrees > 56.25 && degrees <= 78.75) {
+                        cardinalDirection = "ENE";
+                    } else if (degrees > 78.75 && degrees <= 101.25) {
+                        cardinalDirection = "E";
+                    } else if (degrees > 101.25 && degrees <= 123.75) {
+                        cardinalDirection = "ESE";
+                    } else if (degrees > 123.75 && degrees <= 146.25) {
+                        cardinalDirection = "SE";
+                    } else if (degrees > 146.25 && degrees <= 168.75) {
+                        cardinalDirection = "SSE";
+                    } else if (degrees > 168.75 && degrees <= 191.25) {
+                        cardinalDirection = "S";
+                    } else  if (degrees > 191.25 && degrees <= 213.75) {
+                        cardinalDirection = "SSW";
+                    } else if (degrees > 213.75 && degrees <= 236.25)  {
+                        cardinalDirection = "SW";
+                    } else if (degrees > 236.25 && degrees <= 258.75) {
+                        cardinalDirection = "WSW";
+                    } else if (degrees > 258.75 && degrees <= 281.25) {
+                        cardinalDirection = "W";
+                    } else if (degrees > 281.25 && degrees <= 303.75) {
+                        cardinalDirection = "WNW";
+                    } else if (degrees > 303.75 && degrees <= 326.25) {
+                        cardinalDirection = "NW";
+                    } else if (degrees > 326.75 && degrees <= 348.75) {
+                        cardinalDirection = "NNW";
+                    }
+                    return cardinalDirection;
+                }
                 console.log(data)
 
-                $('#hi-low1').html(() => {
-                    let utilArray = [];
-                    let high = -900;
-                    let low = 10000;
-                    for (let i = 0; i < 8; i++){
-                        if (data.list[i].main.temp_max > high) {
-                            high = data.list[i].main.temp_max;
+                function loop(){
+                    for (let j = 1; j <= 5; j++) {
+                        let utilArray = [];
+                        let utilArray1 = [];
+                        let high = -900;
+                        let low = 10000;
+                        let wNumber = dNumber = pNumber = hNumber = 0;
+                        for (let i = ((j - 1) * 8); i < (j * 8); i++) {
+                            if (data.list[i].main.temp_max > high) {
+                                high = data.list[i].main.temp_max;
+                            }
+                            if (data.list[i].main.temp_min < low) {
+                                low = data.list[i].main.temp_min;
+                            }
+                            utilArray.push(data.list[i].weather[0].icon);
+                            utilArray1.push(data.list[i].weather[0].description);
+                            wNumber += data.list[i].wind.speed;
+                            dNumber += data.list[i].wind.deg;
+                            pNumber += data.list[i].main.pressure;
+                            hNumber += data.list[i].main.humidity;
                         }
-                        if (data.list[i].main.temp_min < low){
-                            low = data.list[i].main.temp_min;
-                        }
-                        utilArray.push(data.list[i].weather[0].icon);
+                        $(`#hi-low${j}`).html(`<p className="card-text">${low}&deg;F/${high}&deg;F</p><br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`);
+                        $(`#day${j}-description`).text(`Description: ${mostFrequent(utilArray1)}`);
+                        $(`#day${j}-wind`).text(`Wind: ${(wNumber / 8).toFixed(2)} ${windCardinalDirection(parseInt(dNumber / 8))}`);
+                        $(`#day${j}-pressure`).text(`Pressure: ${parseInt(pNumber / 8)}`);
+                        $(`#day${j}-humidity`).text(`Humidity: ${parseInt(hNumber / 8)}`);
                     }
-                    return `<p className="card-text">${low}&deg;F/${high}&deg;F</p>
-            <br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`;
-                });
+                }
+                loop()
                 $('#hi-low2').html(() => {
                     let utilArray = [];
                     let high = -900;
@@ -106,13 +156,6 @@ $(function (){
                     return `<p className="card-text">${low}&deg;F/${high}&deg;F</p>
             <br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`;
                 });
-                $('#day1-description').text(() => {
-                    let utilArray = [];
-                    for (let i = 0; i < 8; i++){
-                        utilArray.push(data.list[i].weather[0].description);
-                    }
-                    return `Description: ${mostFrequent(utilArray)}`;
-                });
                 $('#day2-description').text(() => {
                     let utilArray = [];
                     for (let i = 8; i < 16; i++){
@@ -141,15 +184,7 @@ $(function (){
                     }
                     return `Description: ${mostFrequent(utilArray)}`;
                 });
-                $('#day1-wind').text(() => {
-                    let pNumber = 0;
-                    let qNumber = 0;
-                    for (let i = 0; i < 8; i++){
-                        pNumber += data.list[i].wind.speed;
-                        qNumber += data.list[i].wind.deg;
-                    }
-                    return `Wind: ${(pNumber/8).toFixed(2)} ${windCardinalDirection(parseInt(qNumber/8))}`;
-                });
+
                 $('#day2-wind').text(() => {
                     let pNumber = 0;
                     let qNumber = 0;
@@ -186,50 +221,6 @@ $(function (){
                     }
                     return `Wind: ${(pNumber/8).toFixed(2)} ${windCardinalDirection(parseInt(qNumber/8))}`;
                 });
-                function windCardinalDirection(degrees){
-                    let cardinalDirection = '';
-                    if ((degrees > 348.75 && degrees <= 360) || (degrees >=0 && degrees <= 11.25)){
-                        cardinalDirection = "N";
-                    } else if (degrees > 11.25 && degrees  <= 33.75) {
-                        cardinalDirection = "NNE";
-                    } else if (degrees > 33.75 && degrees <= 56.25) {
-                        cardinalDirection = "NE";
-                    } else if (degrees > 56.25 && degrees <= 78.75) {
-                        cardinalDirection = "ENE";
-                    } else if (degrees > 78.75 && degrees <= 101.25) {
-                        cardinalDirection = "E";
-                    } else if (degrees > 101.25 && degrees <= 123.75) {
-                        cardinalDirection = "ESE";
-                    } else if (degrees > 123.75 && degrees <= 146.25) {
-                        cardinalDirection = "SE";
-                    } else if (degrees > 146.25 && degrees <= 168.75) {
-                        cardinalDirection = "SSE";
-                    } else if (degrees > 168.75 && degrees <= 191.25) {
-                        cardinalDirection = "S";
-                    } else  if (degrees > 191.25 && degrees <= 213.75) {
-                        cardinalDirection = "SSW";
-                    } else if (degrees > 213.75 && degrees <= 236.25)  {
-                        cardinalDirection = "SW";
-                    } else if (degrees > 236.25 && degrees <= 258.75) {
-                        cardinalDirection = "WSW";
-                    } else if (degrees > 258.75 && degrees <= 281.25) {
-                        cardinalDirection = "W";
-                    } else if (degrees > 281.25 && degrees <= 303.75) {
-                        cardinalDirection = "WNW";
-                    } else if (degrees > 303.75 && degrees <= 326.25) {
-                        cardinalDirection = "NW";
-                    } else if (degrees > 326.75 && degrees <= 348.75) {
-                        cardinalDirection = "NNW";
-                    }
-                    return cardinalDirection;
-                }
-                $('#day1-pressure').text(() => {
-                    let pNumber = 0;
-                    for (let i = 0; i < 8; i++){
-                        pNumber += data.list[i].main.pressure;
-                    }
-                    return `Pressure: ${parseInt(pNumber/8)}`;
-                });
                 $('#day2-pressure').text(() => {
                     let pNumber = 0;
                     for (let i = 8; i < 16; i++){
@@ -257,13 +248,6 @@ $(function (){
                         pNumber += data.list[i].main.pressure;
                     }
                     return `Pressure: ${parseInt(pNumber/8)}`;
-                });
-                $('#day1-humidity').text(() => {
-                    let pNumber = 0;
-                    for (let i = 0; i < 8; i++){
-                        pNumber += data.list[i].main.humidity;
-                    }
-                    return `Humidity: ${parseInt(pNumber/8)}`;
                 });
                 $('#day2-humidity').text(() => {
                     let pNumber = 0;
