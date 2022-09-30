@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather Map</title>
     <script src="js/keys.js"></script>
     <script src="js/jquery-3.x-git.js"></script>
@@ -10,10 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="js/mapbox-geocoder-utils.js"></script>
 </head>
+
 <body>
 <header class="d-flex justify-content-between bg-primary text-light">
-    <h3>Weather App</h3>
-    <p class="my-auto" id="current-city">San Antonio, TX, USA</p>
+    <h3 class="ms-2">Weather App</h3>
+    <p class="my-auto me-2" id="current-city">San Antonio, TX, USA</p>
 </header>
 <main class="my-3">
     <section class="my-3 mx-2" id="search-bar">
@@ -21,9 +23,9 @@
         <input type="text" name="search-input" id="search-input">
     </section>
 
-    <section class="d-flex justify-content-around" id="five-day-forecast">
+    <section class="mb-3 d-flex justify-content-around" id="five-day-forecast">
         <div class="card mx-2" id="forecast-day-one" style="width: 18rem;">
-            <div class="card-header" id="date-one">
+            <div class="card-header" id="date-1">
                 Featured
             </div>
             <div class="card-body d-flex flex-column justify-content-center" id="hi-low1"></div>
@@ -37,7 +39,7 @@
 
 
         <div class="card mx-2" id="forecast-day-two" style="width: 18rem;">
-            <div class="card-header" id="date-two">
+            <div class="card-header" id="date-2">
                 Featured
             </div>
             <div class="card-body d-flex flex-column justify-content-center" id="hi-low2"></div>
@@ -51,7 +53,7 @@
 
 
         <div class="card mx-2" id="forecast-day-three" style="width: 18rem;">
-            <div class="card-header" id="date-three">
+            <div class="card-header" id="date-3">
                 Featured
             </div>
             <div class="card-body d-flex flex-column justify-content-center" id="hi-low3"></div>
@@ -65,7 +67,7 @@
 
 
         <div class="card mx-2" id="forecast-day-four" style="width: 18rem;">
-            <div class="card-header" id="date-four">
+            <div class="card-header" id="date-4">
                 Featured
             </div>
             <div class="card-body d-flex flex-column justify-content-center" id="hi-low4"></div>
@@ -79,7 +81,7 @@
 
 
         <div class="card mx-2" id="forecast-day-five" style="width: 18rem;">
-            <div class="card-header" id="date-five">
+            <div class="card-header" id="date-5">
                 Featured
             </div>
             <div class="card-body d-flex flex-column justify-content-center" id="hi-low5"></div>
@@ -97,6 +99,6 @@
     </section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="js/weather_map.js"></script>
+<script src="js/weather_map_refactored.js"></script>
 </body>
 </html>
