@@ -24,17 +24,12 @@
   c) Also make this change the map theme without changing the currently selected location.
 -->
 <body>
-  <header class="d-flex justify-content-between bg-primary text-light">
+  <header class="bg-primary text-light mb-3">
     <h3 class="ms-2">Weather App</h3>
     <p class="my-auto me-2" id="current-city">San Antonio, TX, USA</p>
   </header>
 
-  <main class="my-3">
-    <section class="my-3 mx-2" id="search-bar">
-      <label for="search-input">Check Another Location: </label>
-      <input type="text" name="search-input" id="search-input">
-    </section>
-
+  <main>
 <!--need a container for the carousel, ideally a dropdown menu for 2 reasons:
 1) container must be able to limit the size of the cards to the mobile screen
 2) container should have css that centers content, probably flex-->
@@ -204,6 +199,11 @@
 
     <section class="justify-content-center d-flex" id="map-section">
       <div  id='map'></div>
+    </section>
+
+    <section class="my-3 mx-2" id="search-bar">
+      <label for="search-input">Check Another Location: </label>
+      <input type="text" name="search-input" id="search-input">
     </section>
   </main>
   <script src="js/weather_map_refactored.js"></script>
