@@ -1,4 +1,8 @@
 @media screen and (max-width: 575px) {
+    #map {
+        width: 99vw;
+        height: 90vh;
+    }
     #five-day-forecast {
         display: none !important;
     }
@@ -30,6 +34,7 @@
         overflow: scroll;
     }
     .card-body {
-padding: 0    }
+    padding: 0;
+    }
 }
 

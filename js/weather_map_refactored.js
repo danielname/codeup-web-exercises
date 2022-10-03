@@ -103,9 +103,9 @@ $(function (){
                 reverseGeocode({lat: Defaults.lat, lng: Defaults.lng}, WEATHER_MAP_TOKEN).then(function(reverseResults){
                     stateNameUSA = String(String(reverseResults.split(', ')[2]).split(' ')[0]);
                     if (data.city.country === 'US') {
-                        $('#current-city').text(`${data.city.name}, ${stateNameUSA}, USA`);
+                        $('#current-city,#m-current-city').text(`${data.city.name}, ${stateNameUSA}, USA`);
                     } else{
-                        $('#current-city').text(`${data.city.name}, ${data.city.country}`);
+                        $('#current-city,#m-current-city').text(`${data.city.name}, ${data.city.country}`);
                     }
                 })
             });
