@@ -15,11 +15,21 @@
     .show {
         display: block;
     }
+
+/*    forecast sizing*/
+    li {
+        height: 12vh;
+    }
 }
 @media screen and (min-width: 576px) {
     .dropdownmenu {
         display: none;
     }
-
+    li {
+        height: 8vh;
+        overflow: scroll;
+    }
+    .card-body {
+padding: 0    }
 }
 

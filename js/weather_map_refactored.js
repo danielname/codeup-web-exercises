@@ -84,15 +84,15 @@ $(function (){
                             pNumber += data.list[i].main.pressure;
                             hNumber += data.list[i].main.humidity;
                         }
-                        $(`#hi-low${j}`).html(`<p className="card-text">${low}&deg;F/${high}&deg;F</p><br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`);
+                        $(`#hi-low${j}`).html(`<p className="card-text">${low}&deg;F/${high}&deg;F</p><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`);
                         $(`#day${j}-description`).text(`Description: ${mostFrequent(utilArray1)}`);
-                        $(`#day${j}-wind`).text(`Wind: ${(wNumber / 8).toFixed(2)} ${windCardinalDirection(parseInt(dNumber / 8))}`);
+                        $(`#day${j}-wind`).html(`Wind: ${(wNumber / 8).toFixed(2)}<br>${windCardinalDirection(parseInt(dNumber / 8))}`);
                         $(`#day${j}-pressure`).text(`Pressure: ${parseInt(pNumber / 8)}`);
                         $(`#day${j}-humidity`).text(`Humidity: ${parseInt(hNumber / 8)}`);
                         $(`#date-${j}`).text(data.list[(j - 1) * 8].dt_txt.slice(0,10));
-                        $(`#hi-low${j}c`).html(`<p className="card-text">${low}&deg;F/${high}&deg;F</p><br><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`);
+                        $(`#hi-low${j}c`).html(`<p className="card-text">${low}&deg;F/${high}&deg;F</p><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`);
                         $(`#day${j}c-description`).text(`Description: ${mostFrequent(utilArray1)}`);
-                        $(`#day${j}c-wind`).text(`Wind: ${(wNumber / 8).toFixed(2)} ${windCardinalDirection(parseInt(dNumber / 8))}`);
+                        $(`#day${j}c-wind`).html(`Wind: ${(wNumber / 8).toFixed(2)}<br>${windCardinalDirection(parseInt(dNumber / 8))}`);
                         $(`#day${j}c-pressure`).text(`Pressure: ${parseInt(pNumber / 8)}`);
                         $(`#day${j}c-humidity`).text(`Humidity: ${parseInt(hNumber / 8)}`);
                         $(`#date-${j}c`).text(data.list[(j - 1) * 8].dt_txt.slice(0,10));

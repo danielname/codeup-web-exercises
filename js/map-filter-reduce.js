@@ -36,13 +36,12 @@ const users = [
     }
 ];
 
-const threeLanguages = users.filter(languages => languages.length >= 3);
+const threeLanguages = users.filter(a => a.languages.length >= 3);
 
 const emails = users.map(x => x.email);
 
-const i = 0;
-const totalEXP = users.reduce((a,b) => a + b.yearsOfExperience, i);
+const totalEXP = users.reduce((a,b) => a + b.yearsOfExperience, 0);
 
 const longestEmail = users.reduce((a,b) => a.length < b.email.length ? b.email : a, ``);
 
-const listOfNames = users.reduce((a,b) => a.name.concat(`, ${b.name}`), ``);
+const listOfNames = users.reduce((a,b) => a.concat(`, ${b.name}`), ``);
