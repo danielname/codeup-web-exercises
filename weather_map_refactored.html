@@ -40,13 +40,12 @@
 <!--need a container for the carousel, ideally a dropdown menu for 2 reasons:
 1) container must be able to limit the size of the cards to the mobile screen
 2) container should have css that centers content, probably flex-->
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown button
+    <div class="dropdownmenu">
+      <button class="dropbutton">
+        Weather Forecast
       </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item disabled" >
-          <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-touch="true" data-bs-interval="false">
+      <div id="Dropdown" class="dropdownmenu-content">
+        <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-touch="true" data-bs-interval="false">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="card mx-2" id="c-forecast-day-one" style="width: 18rem;">
@@ -128,8 +127,7 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-        </a></li>
-      </ul>
+      </div>
     </div>
 
 

@@ -2,9 +2,24 @@
     #five-day-forecast {
         display: none !important;
     }
-}
-@media screen and (min-width: 576px) {
-    .dropdown {
+    .dropdownmenu {
+        position: relative;
+        display: inline-block;
+        outline: none;
+    }
+    .dropdownmenu-content {
         display: none;
+        position: absolute;
+    }
+
+    .show {
+        display: block;
     }
 }
+@media screen and (min-width: 576px) {
+    .dropdownmenu {
+        display: none;
+    }
+
+}
+
