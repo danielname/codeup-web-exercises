@@ -231,3 +231,17 @@ function minMax(array){
     })
     return [array[0], array[array.length - 1]];
 }
+
+/*----------------------------------DOM Warmups----------------------------------*/
+//When the user clicks the button that has the text "change heading," the text of the <h1> element changes to read "I pwn the DOM"
+
+$('#change').on('click',function(){
+    $('#warmup').text('I pwn the DOM')
+})
+
+// Every time the user enters a character in the input with id "source", that character appears in the <p> element with the id "output"
+
+$('#source').on('keyup',function(){
+    let targetText = $('#source').val(); // it is more efficient to put this in the text parens
+    $('#target').text(targetText);
+})

@@ -1,9 +1,9 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 575px) {
     #five-day-forecast {
-        display: none;
+        display: none !important;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 576px) {
     #carousel {
         display: none;
     }
