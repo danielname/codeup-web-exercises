@@ -84,7 +84,7 @@ $(function (){
                             pNumber += data.list[i].main.pressure;
                             hNumber += data.list[i].main.humidity;
                         }
-                        $(`#hi-low${j},#hi-low${j}c`).html(`<p class="card-text">${low}&deg;F/${high}&deg;F</p><img src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`);
+                        $(`#hi-low${j},#hi-low${j}c`).html(`<p class="card-text">${low}&deg;F/${high}&deg;F</p><img class="images" src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`);
                         $(`#day${j}-description,#day${j}c-description`).text(`Description: ${mostFrequent(utilArray1)}`);
                         $(`#day${j}-wind`).html(`Wind: ${(wNumber / 8).toFixed(2)}<br>${windCardinalDirection(parseInt(dNumber / 8))}`);
                         $(`#day${j}-pressure,#day${j}c-pressure`).text(`Pressure: ${parseInt(pNumber / 8)}`);
