@@ -256,4 +256,6 @@ $('h2').on('mouseenter',function (){
 })
 
 // When the user clicks on the "Hot Pink It" button, all the text in the div with the id of loremParagraphs becomes hotpink if it's black, or black if it's hotpink.
-
+$('#hotPinkIt').on('click',function(){
+    $('#loremParagraphs').toggleClass('hotpink')
+})
