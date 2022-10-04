@@ -6,6 +6,17 @@
     header {
         display: none !important;
     }
+    #search-bar-label {
+        display: block;
+        width: 100vw;
+        height: 8vh;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        background-color: #0030cc;
+        color: #FFFFFF;
+        margin: 0;
+    }
     #map {
         width: 99vw;
         height: 84vh;
