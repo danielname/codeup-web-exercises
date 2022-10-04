@@ -9,3 +9,15 @@ function lastCommit(username) {
         })
         .catch( error => console.error(error));
 }
+
+function wait(number){
+    const waitPromise = new Promise((resolve, reject) => {
+        if (typeof number === 'number') {
+            resolve(setTimeout(() => {
+                console.log(`you will see this after ${number / 1000} seconds`);
+            }, number))
+        } else {
+            reject('sorry, request failed')
+        }
+    })
+}
