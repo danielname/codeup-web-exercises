@@ -20,4 +20,5 @@ function wait(number){
             reject('sorry, request failed')
         }
     })
+    return `${number} milliseconds`
 }
