@@ -245,3 +245,15 @@ $('#source').on('keyup',function(){
     let targetText = $('#source').val(); // it is more efficient to put this in the text parens
     $('#target').text(targetText);
 })
+
+
+// When the mouse enters the h2 with the text "Lorem Generator", a paragraph contain lorem appears in the div with the id of loremParagraphs
+let loremArray = ['Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorum, error odit omnis perferendis quas quo voluptatum. Dolores dolorum neque nesciunt nihil porro quia sequi soluta veniam, veritatis. Dolore, eius.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab autem inventore iste, iure labore mollitia possimus quod rem sapiente! A asperiores dolor expedita, id libero perspiciatis sequi suscipit ut.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium blanditiis dolorem id incidunt ipsam iste laboriosam maxime, natus nihil nobis, nulla numquam officia omnis quam reprehenderit sit suscipit voluptas voluptatibus!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores consectetur consequatur cumque et exercitationem fugiat iste labore magnam magni nam nihil non optio praesentium quas quisquam, quos reiciendis repudiandae!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dolor dolores eius error incidunt iste magnam maiores nemo numquam obcaecati, perferendis quasi sapiente soluta! Cupiditate dolor exercitationem incidunt molestias quas!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At beatae commodi dignissimos doloremque esse explicabo iure, laborum, molestias natus officiis omnis optio quibusdam quisquam similique velit voluptas voluptate! Aut, qui.'];
+
+const loremRandom = () => Math.floor(Math.random() * loremArray.length);
+$('h2').on('mouseenter',function (){
+    $('#loremParagraphs').append(`<p>${loremArray[loremRandom()]}</p>`);
+})
+
+// When the user clicks on the "Hot Pink It" button, all the text in the div with the id of loremParagraphs becomes hotpink if it's black, or black if it's hotpink.
+
