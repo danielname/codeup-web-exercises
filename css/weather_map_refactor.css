@@ -74,9 +74,6 @@
         align-content: center;
         align-items: center;
     }
-    .card-body {
-    /*    need to be able to decrease this size. need to decreas the size of the picture, since it is just filling up the div*/
-    }
 }
 
 

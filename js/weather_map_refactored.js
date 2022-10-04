@@ -161,4 +161,8 @@ $(function (){
     document.getElementById("Dropdown").addEventListener('click', function (event) {
         event.stopPropagation();
     });
+
+    // $('#search-bar-label').on('click', function(){
+    //     document.getElementById("input-container").classList.toggle("show");
+    // })
 });
