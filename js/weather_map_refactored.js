@@ -157,12 +157,12 @@ $(function (){
         document.getElementById("Dropdown").classList.toggle("show");
     })
 
+    $('#search-bar-label').on('click', function(){
+        document.getElementById("input-container").classList.toggle("show");
+    })
+
     // Prevents menu from closing when clicked inside
     document.getElementById("Dropdown").addEventListener('click', function (event) {
         event.stopPropagation();
     });
-
-    // $('#search-bar-label').on('click', function(){
-    //     document.getElementById("input-container").classList.toggle("show");
-    // })
 });

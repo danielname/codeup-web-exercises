@@ -58,11 +58,13 @@
         display: none;
         position: absolute;
         width: 100%;
+        height: 100%;
         z-index: 101;
     }
 
     .show {
-        display: block;
+        display: block !important;
+
     }
 
     li {
