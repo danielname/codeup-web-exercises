@@ -62,8 +62,11 @@
         z-index: 101;
     }
 
-    .show {
+    .show-dropdown {
         display: block !important;
+    }
+    .show-input {
+        display: flex !important;
     }
 
     li {

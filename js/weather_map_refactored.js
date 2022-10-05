@@ -154,11 +154,11 @@ $(function (){
 
     // Clicking dropdown button will toggle display
     $('.dropbutton').on('click', function(){
-        document.getElementById("Dropdown").classList.toggle("show");
+        document.getElementById("Dropdown").classList.toggle("show-dropdown");
     })
 
     $('#search-bar-label').on('click', function(){
-        document.getElementById("input-container").classList.toggle("show");
+        document.getElementById("input-container").classList.toggle("show-input");
     })
 
     // Prevents menu from closing when clicked inside
@@ -166,3 +166,4 @@ $(function (){
         event.stopPropagation();
     });
 });
+
