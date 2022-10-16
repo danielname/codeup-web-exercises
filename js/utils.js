@@ -30,14 +30,22 @@ const dnUtils = {
             return 2 * pi * radius;
         }
     },
-    conversions: {
+    conversion: {
         // the following takes miles and returns kilometers
-        miToKm (miles) {
+        mileToKilometer (miles) {
             return miles * 1.609
         },
-        galToLiter (gallons) {
+        // the following takes kilometers and returns miles
+        kilometerToMile(kilometer){
+            return distance * 0.6213;
+        },
+        gallonToLiter (gallons) {
             // the following takes gallons and returns liters
             return gallons * 3.78541
+        },
+        literToGallon(liters){
+            // the following takes liters and returns gallons
+            return liters * 0.2641
         },
         celsiusToFahrenheit (celsius) {
             // the following takes celsius and returns fahrenheit
