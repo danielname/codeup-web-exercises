@@ -1,6 +1,6 @@
 const dnUtils = {
     number: {
-        // the following function checks if the argument is a number
+        // the following checks if the argument is a number
         isNumber(arg) {
             return !(isNaN(arg) || typeof arg === `boolean` || arg === null)
         },
@@ -13,6 +13,35 @@ const dnUtils = {
             return (array.reduce(function (a, b) {
                 return a + b;
             }, 0)) / array.length;
+        },
+        // the following checks if the argument is an odd number
+        isOdd (number) {
+            return Math.abs(number) % 2 === 1;
+        },
+        // the following checks if the argument is an even number
+        isEven (number) {
+            return number % 2 === 0;
+        }
+    },
+    geometry: {
+        // the following returns the circumference of a circle given a radius
+        circumference (radius) {
+            const pi = Math.PI;
+            return 2 * pi * radius;
+        }
+    },
+    conversions: {
+        // the following takes miles and returns kilometers
+        miToKm (miles) {
+            return miles * 1.609
+        },
+        galToLiter (gallons) {
+            // the following takes gallons and returns liters
+            return gallons * 3.78541
+        },
+        celsiusToFahrenheit (celsius) {
+            // the following takes celsius and returns fahrenheit
+            return (celsius * (9 / 5)) + 32
         }
     },
     string: {
