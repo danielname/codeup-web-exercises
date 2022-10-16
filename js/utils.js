@@ -5,6 +5,11 @@
 //     return !(isNaN(arg) || typeof arg === `boolean` || arg === null);
 // }
 
+// the following is a random number generator that defaults from 1 to the number of options
+function rng(numberOfOptions, startingValue = 1){
+    return Math.floor(Math.random() * numberOfOptions) +startingValue;
+}
+
 // the following function accepts an array of numbers and returns the average of those numbers.
 function average(array){
     return (array.reduce(function(a,b){
