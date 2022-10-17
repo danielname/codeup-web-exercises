@@ -89,6 +89,19 @@
         justify-content: center;
         align-content: center;
         align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
+    .dnSlides{
+        display: flex;
+
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+
+
+
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
     }
     /* The Close Button */
     .close {
