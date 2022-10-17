@@ -9,6 +9,9 @@
 }
 
 @media screen and (max-width: 575px) {
+    body{
+        overflow: hidden;
+    }
     header {
         display: none !important;
     }
