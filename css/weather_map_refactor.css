@@ -117,7 +117,7 @@
         justify-content: space-between;
     }
     .dnModal, .dnModal-button {
-        display: none;
+        display: none !important;
     }
     li {
         height: 8vh;

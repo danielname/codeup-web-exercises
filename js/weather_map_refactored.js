@@ -161,14 +161,6 @@ $(function (){
         document.getElementById("input-container").classList.toggle("show-input");
     })
 
-    // Prevents menu from closing when clicked inside
-    document.getElementById("Dropdown").addEventListener('click', function (event) {
-        event.stopPropagation();
-    });
-
-
-
-
 
     // When the user clicks on the button, open the modal
     $('.dnModal-button').on('click', function(){
