@@ -165,5 +165,18 @@ $(function (){
     document.getElementById("Dropdown").addEventListener('click', function (event) {
         event.stopPropagation();
     });
+
+
+
+
+
+    // When the user clicks on the button, open the modal
+    $('.dnModal-button').on('click', function(){
+        $('.dnModal').css('display', "block");
+    });
+    // When the user clicks on <span> (x), close the modal
+    $('.dnModal-close').on('click', function(){
+        $('.dnModal').css('display', "none");
+    });
 });
 
