@@ -83,15 +83,16 @@
     .show-input {
         display: flex !important;
     }
+    .card {
+        width: 80vw;
+        box-sizing: border-box;
+    }
 
     li {
         height: 8vh;
     }
-    #carousel {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
+    .dnSlider {
+        width: 80%
         text-align: center;
         overflow: hidden;
     }

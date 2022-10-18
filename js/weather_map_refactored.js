@@ -170,5 +170,7 @@ $(function (){
     $('.dnModal-close').on('click', function(){
         $('.dnModal, .dnModal-content').css('display', "none");
     });
+
+
 });
 
