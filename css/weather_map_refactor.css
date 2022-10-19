@@ -70,7 +70,7 @@ li {
         height: 84.5%;
         z-index: 100;
         background-color: #fefefe;
-        margin: 13% auto 10% auto; /* 15% from the top and centered */
+        margin: 8vh auto 7vh auto; /* 15% from the top and centered */
         padding: 20px;
         border: 1px solid #888;
     }
@@ -89,7 +89,7 @@ li {
         display: flex !important;
     }
     .card {
-        width: 80vw;
+        width: 100%;
         box-sizing: border-box;
     }
 
@@ -98,61 +98,25 @@ li {
     }
 
     /* The Close Button */
-    .close {
+    .dnModal-close {
         color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
+        font-size: 2rem;
+        font-weight: bolder;
+        border: 1px solid #aaa;
+        padding-left: .6rem;
+        padding-right: .6rem;
+        border-radius: 50%;
+        padding-bottom: 0.2rem;
     }
 
-    .close:hover, .close:focus {
+    .dnModal-close:hover, .dnModal-close:focus {
         color: black;
         text-decoration: none;
         cursor: pointer;
-    }
-    @keyframes tonext {
-        75% {
-            left: 0;
-        }
-        95% {
-            left: 100%;
-        }
-        98% {
-            left: 100%;
-        }
-        99% {
-            left: 0;
-        }
-    }
-
-    @keyframes tostart {
-        75% {
-            left: 0;
-        }
-        95% {
-            left: -300%;
-        }
-        98% {
-            left: -300%;
-        }
-        99% {
-            left: 0;
-        }
-    }
-
-    @keyframes snap {
-        96% {
-            scroll-snap-align: center;
-        }
-        97% {
-            scroll-snap-align: none;
-        }
-        99% {
-            scroll-snap-align: none;
-        }
-        100% {
-            scroll-snap-align: center;
-        }
+        border: 1px solid black;
+        border-radius: 50%;
+        padding-left: .6rem;
+        padding-right: .6rem;
     }
 
 
@@ -204,6 +168,8 @@ li {
         counter-reset: item;
         scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .carousel__slide {
@@ -272,21 +238,6 @@ li {
         border-radius: 50%;
         font-size: 0;
         transition: transform 0.1s;
-    }
-
-    .carousel::before,
-    .carousel::after,
-    .carousel__prev,
-    .carousel__next {
-        position: absolute;
-        top: 0;
-        margin-top: 37.5%;
-        width: 4rem;
-        height: 4rem;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        font-size: 0;
-        outline: 0;
     }
 
     .carousel::before,
