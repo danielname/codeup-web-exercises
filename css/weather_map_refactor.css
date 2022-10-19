@@ -1,6 +1,10 @@
 .images {
     width: 100px;
 }
+li {
+    list-style: none;
+
+}
 .card-body {
     display: flex;
     flex-flow: column;
@@ -63,9 +67,10 @@
         display: none;
         position: absolute;
         width: 100%;
+        height: 84.5%;
         z-index: 100;
         background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
+        margin: 13% auto 10% auto; /* 15% from the top and centered */
         padding: 20px;
         border: 1px solid #888;
     }
@@ -150,12 +155,6 @@
         }
     }
 
-    body {
-        max-width: 37.5rem;
-        margin: 0 auto;
-        padding: 0 1.25rem;
-        font-family: 'Lato', sans-serif;
-    }
 
     * {
         box-sizing: border-box;
@@ -190,7 +189,8 @@
         position: relative;
         padding-top: 75%;
         filter: drop-shadow(0 0 10px #0003);
-        perspective: 100px;
+        perspective: 100px; /*what does this do?*/
+        height: 90%;
     }
 
     .carousel__viewport {
