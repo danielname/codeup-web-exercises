@@ -171,6 +171,17 @@ $(function (){
         $('.dnModal, .dnModal-content').css('display', "none");
     });
 
+    // When the user clicks on the button, open the modal
+    $('.dnModal-button2').on('click', function(){
+        $('.dnModal2, .dnModal-content2').css('display', "block");
+    });
+    // When the user clicks on <span> (x), close the modal
+    $('.dnModal2').on('keyup', function(e){
+        if(e.which === 13 || e.keyCode === 13) {
+            $('.dnModal2, .dnModal-content2').css('display', "none");
+        }
+    });
+
 
 });
 
