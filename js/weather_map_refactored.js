@@ -98,9 +98,11 @@ $(function (){
                 reverseGeocode({lat: Defaults.lat, lng: Defaults.lng}, WEATHER_MAP_TOKEN).then(function(reverseResults){
                     stateNameUSA = String(String(reverseResults.split(', ')[2]).split(' ')[0]);
                     if (data.city.country === 'US') {
-                        $('#current-city,#m-current-city').text(`${data.city.name}, ${stateNameUSA}, USA`);
+                        $('#m-current-city').text(`${data.city.name}, ${stateNameUSA}, USA`);
+                        $('#current-city').attr('placeholder', `${data.city.name}, ${stateNameUSA}, USA`).attr('value',"");
                     } else{
-                        $('#current-city,#m-current-city').text(`${data.city.name}, ${data.city.country}`);
+                        $('#m-current-city').text(`${data.city.name}, ${data.city.country}`);
+                        $('#current-city').attr('placeholder', `${data.city.name}, ${data.city.country}`).attr('value', '');
                     }
                 })
             });
@@ -135,7 +137,7 @@ $(function (){
         Defaults.lng = marker.getLngLat().lng;
         Defaults.update();
     });
-    $('#search-input').on('keypress',function(e) {
+    $('#search-input, #current-city').on('keypress',function(e) {
         if(e.which === 13 || e.keyCode === 13) {
             geocode($(this).val(),WEATHER_MAP_TOKEN).then(function(result){
                 Defaults.lat = result[1];
