@@ -87,7 +87,7 @@ $(function (){
                         $(`#hi-low${j},#hi-low${j}c`).html(`<p class="card-text">${low}&deg;F/${high}&deg;F</p><img class="images" src="http://openweathermap.org/img/w/${mostFrequent(utilArray)}.png">`);
                         $(`#day${j}-description,#day${j}c-description`).text(`Description: ${mostFrequent(utilArray1)}`);
                         $(`#day${j}-wind`).html(`Wind: ${(wNumber / 8).toFixed(2)}<br>${windCardinalDirection(parseInt(dNumber / 8))}`);
-                        $(`#day${j}-pressure,#day${j}c-pressure`).text(`Pressure: ${parseInt(pNumber / 8)}`);
+                        $(`#day${j}-pressure,#day${j}c-pressure`).text(`Pressure: ${parseInt(pNumber / 8)} mb`);
                         $(`#day${j}-humidity,#day${j}c-humidity`).text(`Humidity: ${parseInt(hNumber / 8)}`);
                         $(`#date-${j},#date-${j}c`).text(data.list[(j - 1) * 8].dt_txt.slice(0,10));
                         $(`#day${j}c-wind`).html(`Wind: ${(wNumber / 8).toFixed(2)} ${windCardinalDirection(parseInt(dNumber / 8))}`);
@@ -182,6 +182,4 @@ $(function (){
         }
     });
 
-
 });
-
