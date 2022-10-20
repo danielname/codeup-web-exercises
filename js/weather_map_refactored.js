@@ -181,6 +181,16 @@ $(function (){
             $('.dnModal2, .dnModal-content2').css('display', "none");
         }
     });
+    const modal = document.getElementsByClassName('dnModal2')[0];
+    const modal2 = document.getElementsByClassName('dnModal')[0];
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal || event.target == modal2) {
+            modal.style.display = "none";
+            modal2.style.display = "none";
+        }
+    }
 
     // When the user clicks the current city on desktop, it replaces the location with a searchbar that lets you change the city
     // I think i should attempt to use display to show and hide the two sections.
