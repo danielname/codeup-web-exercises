@@ -24,6 +24,9 @@
   <header class="bg-primary text-light mb-3">
     <h3 class="ms-2">Weather App</h3>
     <p class="my-auto me-2" id="current-city">San Antonio, TX, USA</p>
+    <div class="dnModal2">
+      <div id="input-container" class="dnModal-content2"><input type="text" name="search-input" id="search-input"></div>
+    </div>
   </header>
 
   <main>
@@ -34,7 +37,6 @@
       <div id="Dropdown" class="dnModal-content">
         <span class="dnModal-close">&times;</span>
 
-<!---------------------------------------------------->
         <section class="carousel" aria-label="Gallery">
           <ol class="carousel__viewport">
             <li id="carousel__slide1"
@@ -152,10 +154,11 @@
             </ol>
           </aside>
         </section>
-        <!---------------------------------------------------->
-
       </div><!--modal content end, line 37 start-->
     </div> <!--modal end, line 36 start-->
+
+
+
 
     <section class="mb-3 d-flex justify-content-around" id="five-day-forecast">
       <div class="card mx-2" id="forecast-day-one" style="width: 18rem;">
@@ -232,9 +235,7 @@
       <div  id='map'></div>
     </section>
 
-    <div class="dnModal2">
-      <div id="input-container" class="dnModal-content2"><input type="text" name="search-input" id="search-input"></div>
-    </div>
+
     <section id="search-bar">
       <label for="search-input" id="search-bar-label" class="dnModal-button2">Check Another Location: </label>
     </section>
