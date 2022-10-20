@@ -99,10 +99,10 @@ $(function (){
                     stateNameUSA = String(String(reverseResults.split(', ')[2]).split(' ')[0]);
                     if (data.city.country === 'US') {
                         $('#m-current-city').text(`${data.city.name}, ${stateNameUSA}, USA`);
-                        $('#current-city').attr('placeholder', `${data.city.name}, ${stateNameUSA}, USA`).attr('value',"");
+                        $('#current-city').attr('placeholder', `${data.city.name}, ${stateNameUSA}, USA`).val('');
                     } else{
                         $('#m-current-city').text(`${data.city.name}, ${data.city.country}`);
-                        $('#current-city').attr('placeholder', `${data.city.name}, ${data.city.country}`).attr('value', '');
+                        $('#current-city').attr('placeholder', `${data.city.name}, ${data.city.country}`).val('');
                     }
                 })
             });
