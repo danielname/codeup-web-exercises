@@ -323,5 +323,20 @@ li {
         justify-content: center;
         margin-top: .5rem;
     }
+
+    input[type="text"]::placeholder {
+        text-align: right;
+        color: #FFFFFF;
+    }
+    input[type="email"]::-ms-input-placeholder {
+        text-align: right;
+        color: #FFFFFF;
+    }
+    #current-city {
+        background-color: #0d6efd;
+        color: #FFFFFF;
+        border: none;
+        width: 30vw;
+    }
 }
 
