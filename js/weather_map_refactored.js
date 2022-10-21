@@ -150,8 +150,8 @@ $(function (){
                 map.setStyle('mapbox://styles/mapbox/streets-v11');
                 Defaults.update();
                 $(this).val("");
-                $(this).toggleClass('dark');
-                $('header').toggleClass('dark');
+                $('header, #current-city, #m-current-city, .dnModal-button2').toggleClass('dark');
+
             } else {
                 geocode($(this).val(), WEATHER_MAP_TOKEN).then(function (result) {
                     Defaults.lat = result[1];
