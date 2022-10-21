@@ -145,10 +145,14 @@ $(function (){
                 map.setStyle('mapbox://styles/danielname/cl9il5e61000f14rqdxjtoqxz');
                 Defaults.update();
                 $(this).val("");
+                $(this).toggleClass('dark');
+                $('header, #m-current-city').toggleClass('dark');
             } else if ($(this).val().toLowerCase() === "let there be light") {
                 map.setStyle('mapbox://styles/mapbox/streets-v11');
                 Defaults.update();
                 $(this).val("");
+                $(this).toggleClass('dark');
+                $('header').toggleClass('dark');
             } else {
                 geocode($(this).val(), WEATHER_MAP_TOKEN).then(function (result) {
                     Defaults.lat = result[1];
