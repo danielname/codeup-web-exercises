@@ -3,6 +3,7 @@ $(function (){
     const Defaults = {
         lat: 29.428106704221186,
         lng: -98.49567610253364,
+        mapStyle: 'mapbox://styles/mapbox/streets-v11',
         update(){
             $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 APPID: OPEN_WEATHER_APPID,
@@ -63,7 +64,7 @@ $(function (){
                 }
                 console.log(data)
 
-                function loop(){
+                function loop() {
                     for (let j = 1; j <= 5; j++) {
                         let utilArray = [];
                         let utilArray1 = [];
@@ -88,7 +89,7 @@ $(function (){
                         $(`#day${j}-description,#day${j}c-description`).text(`Description: ${mostFrequent(utilArray1)}`);
                         $(`#day${j}-wind`).html(`Wind: ${(wNumber / 8).toFixed(2)}<br>${windCardinalDirection(parseInt(dNumber / 8))}`);
                         $(`#day${j}-pressure,#day${j}c-pressure`).text(`Pressure: ${parseInt(pNumber / 8)} mb`);
-                        $(`#day${j}-humidity,#day${j}c-humidity`).text(`Humidity: ${parseInt(hNumber / 8)}`);
+                        $(`#day${j}-humidity,#day${j}c-humidity`).text(`Humidity: ${parseInt(hNumber / 8)}%`);
                         $(`#date-${j},#date-${j}c`).text(data.list[(j - 1) * 8].dt_txt.slice(0,10));
                         $(`#day${j}c-wind`).html(`Wind: ${(wNumber / 8).toFixed(2)} ${windCardinalDirection(parseInt(dNumber / 8))}`);
                     }
@@ -110,11 +111,12 @@ $(function (){
     }
     Defaults.update();
 
+
     //the following makes the map visible
     mapboxgl.accessToken = WEATHER_MAP_TOKEN;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        style: Defaults.mapStyle, // style URL
         center: [Defaults.lng, Defaults.lat], // starting position [lng, lat]
         zoom: 10, // starting zoom
         projection: 'globe' // display the map as a 3D globe
@@ -139,30 +141,32 @@ $(function (){
     });
     $('#search-input, #current-city').on('keypress',function(e) {
         if(e.which === 13 || e.keyCode === 13) {
-            geocode($(this).val(),WEATHER_MAP_TOKEN).then(function(result){
-                Defaults.lat = result[1];
-                Defaults.lng = result[0];
-                let stateNameUSA = '';
-                map.setCenter([Defaults.lng,Defaults.lat]);
+            if ($(this).val().toLowerCase() === "make it dark"){
+                map.setStyle('mapbox://styles/danielname/cl9il5e61000f14rqdxjtoqxz');
                 Defaults.update();
-                marker.setLngLat([Defaults.lng,Defaults.lat]);
-            });
+                $(this).val("");
+            } else if ($(this).val().toLowerCase() === "let there be light") {
+                map.setStyle('mapbox://styles/mapbox/streets-v11');
+                Defaults.update();
+                $(this).val("");
+            } else {
+                geocode($(this).val(), WEATHER_MAP_TOKEN).then(function (result) {
+                    Defaults.lat = result[1];
+                    Defaults.lng = result[0];
+                    let stateNameUSA = '';
+                    map.setCenter([Defaults.lng, Defaults.lat]);
+                    Defaults.update();
+                    marker.setLngLat([Defaults.lng, Defaults.lat]);
+                });
+                $(this).val("");
+            }
         }
     });
 
-// dropdown
-
-    // JavaScript code to avoid dropdown menu close
-
-    // Clicking dropdown button will toggle display
-    $('.dropbutton').on('click', function(){
-        document.getElementById("Dropdown").classList.toggle("show-dropdown");
-    })
 
     $('#search-bar-label').on('click', function(){
         document.getElementById("input-container").classList.toggle("show-input");
     })
-
 
     // When the user clicks on the button, open the modal
     $('.dnModal-button').on('click', function(){
@@ -177,12 +181,14 @@ $(function (){
     $('.dnModal-button2').on('click', function(){
         $('.dnModal2, .dnModal-content2').css('display', "block");
     });
-    // When the user clicks on <span> (x), close the modal
+    // When the user clicks enter on the search it closes the modal
     $('.dnModal2').on('keyup', function(e){
         if(e.which === 13 || e.keyCode === 13) {
             $('.dnModal2, .dnModal-content2').css('display', "none");
         }
     });
+
+
     const modal = document.getElementsByClassName('dnModal2')[0];
     const modal2 = document.getElementsByClassName('dnModal')[0];
 
