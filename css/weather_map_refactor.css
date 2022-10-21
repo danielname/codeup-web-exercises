@@ -11,10 +11,6 @@ li {
     justify-content: center;
     align-items: center;
 }
-.dark {
-    background-color: #000000;
-    color:#FFFF00;
-}
 
 @media screen and (max-width: 575px) {
     body{
@@ -81,6 +77,10 @@ li {
         background-color: #0dcc00;
         color: #FFFFFF;
         margin: 0;
+    }
+    .dark.dnModal-button{
+        background-color: #53169b !important;
+        color: yellow !important;
     }
     .dnModal-content {
         display: none;
@@ -342,6 +342,10 @@ li {
         background-color: #35e70a;
         border: none;
         width: 30vw;
+    }
+    .dark#current-city, header.dark{
+        background-color: #53169b !important;
+        color: yellow !important;
     }
 }
 
