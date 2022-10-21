@@ -145,8 +145,7 @@ $(function (){
                 map.setStyle('mapbox://styles/danielname/cl9il5e61000f14rqdxjtoqxz');
                 Defaults.update();
                 $(this).val("");
-                $(this).toggleClass('dark');
-                $('header, #m-current-city').toggleClass('dark');
+                $('header, #current-city, #m-current-city, .dnModal-button2').toggleClass('dark');
             } else if ($(this).val().toLowerCase() === "let there be light") {
                 map.setStyle('mapbox://styles/mapbox/streets-v11');
                 Defaults.update();

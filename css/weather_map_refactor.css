@@ -27,8 +27,12 @@ li {
         cursor: pointer;
         text-align: center;
         background-color: #0030cc;
-        color: #FFFFFF;
+        color: #ffffff;
         margin: 0;
+    }
+    .dark#search-bar-label{
+        background-color: midnightblue !important;
+        color: orangered !important;
     }
     #map {
         width: 99vw;
