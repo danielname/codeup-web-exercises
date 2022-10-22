@@ -353,9 +353,17 @@ body.dark {
         text-align: right;
         color: #000000;
     }
+    input[type="text"].dark::placeholder {
+        text-align: right;
+        color: yellow;
+    }
     input[type="text"]::-ms-input-placeholder {
         text-align: right;
         color: #000000;
+    }
+    input[type="text"].dark::-ms-input-placeholder {
+        text-align: right;
+        color: yellow;
     }
     #current-city {
         background-color: #35e70a;
