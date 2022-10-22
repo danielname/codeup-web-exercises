@@ -11,6 +11,12 @@ li {
     justify-content: center;
     align-items: center;
 }
+.card-header.dark {
+    background-color: #484848;
+}
+.card-body.dark, .list-group-item.dark {
+    background-color: #000000;
+}
 
 @media screen and (max-width: 575px) {
     body{
