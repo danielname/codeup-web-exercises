@@ -11,6 +11,9 @@ li {
     justify-content: center;
     align-items: center;
 }
+body.dark {
+    background-color: midnightblue;
+}
 .card-header.dark {
     background-color: #484848 !important;
     color: red !important;
