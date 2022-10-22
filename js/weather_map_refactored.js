@@ -145,12 +145,12 @@ $(function (){
                 map.setStyle('mapbox://styles/danielname/cl9il5e61000f14rqdxjtoqxz');
                 Defaults.update();
                 $(this).val("");
-                $('header, #current-city, #m-current-city, .dnModal-button2').toggleClass('dark');
+                $('header, #current-city, #m-current-city, .dnModal-button2, .card-body, .card-header, .list-group-item').toggleClass('dark');
             } else if ($(this).val().toLowerCase() === "let there be light") {
                 map.setStyle('mapbox://styles/mapbox/streets-v11');
                 Defaults.update();
                 $(this).val("");
-                $('header, #current-city, #m-current-city, .dnModal-button2').toggleClass('dark');
+                $('header, #current-city, #m-current-city, .dnModal-button2, .card-body, .card-header, .list-group-item').toggleClass('dark');
 
             } else {
                 geocode($(this).val(), WEATHER_MAP_TOKEN).then(function (result) {

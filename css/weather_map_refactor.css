@@ -12,10 +12,14 @@ li {
     align-items: center;
 }
 .card-header.dark {
-    background-color: #484848;
+    background-color: #484848 !important;
+    color: red !important;
+
 }
 .card-body.dark, .list-group-item.dark {
-    background-color: #000000;
+    background-color: #000000 !important;
+    color: red !important;
+    border: 1px solid gray;
 }
 
 @media screen and (max-width: 575px) {
