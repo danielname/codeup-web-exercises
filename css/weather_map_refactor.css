@@ -98,7 +98,9 @@ body.dark {
         background-color: #53169b !important;
         color: yellow !important;
     }
-
+    .dnModal-content.dark, .dnModal-content2.dark {
+        background-color: #3a4054;
+    }
     .dnModal-content {
         display: none;
         position: absolute;
