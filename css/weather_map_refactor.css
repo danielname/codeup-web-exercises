@@ -17,7 +17,6 @@ body.dark {
 .card-header.dark {
     background-color: #484848 !important;
     color: red !important;
-
 }
 .card-body.dark, .list-group-item.dark {
     background-color: #000000 !important;
@@ -95,10 +94,11 @@ body.dark {
         color: #FFFFFF;
         margin: 0;
     }
-    .dark.dnModal-button{
+    .dark.dnModal-button, #search-input.dark{
         background-color: #53169b !important;
         color: yellow !important;
     }
+
     .dnModal-content {
         display: none;
         position: absolute;
