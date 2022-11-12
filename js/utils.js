@@ -72,6 +72,14 @@ const dnUtils = {
             let strArray = str.split("");
             strArray = strArray.reverse();
             return strArray.join("");
+        },
+        // the following takes a string and makes an acronym
+        toAcronym(string){
+            let inpArray = string.split(" ");
+            inpArray.forEach((word,index)=>{
+                inpArray[index] = word.slice(0,1).toUpperCase();
+            })
+            return inpArray.join("");
         }
     },
     array: {
