@@ -21,6 +21,10 @@ const dnUtils = {
         // the following checks if the argument is an even number
         isEven (number) {
             return number % 2 === 0;
+        },
+        // the foollowing checks if a number is divisible by 2 other numbers
+        isDivisible (n, x, y) {
+            return n % x === 0 && n % y === 0;
         }
     },
     geometry: {
@@ -63,6 +67,7 @@ const dnUtils = {
             }
             return stringArray.join('');
         },
+        // the following function reverses the characters of a string
         reverse(string) {
             let strArray = str.split("");
             strArray = strArray.reverse();
