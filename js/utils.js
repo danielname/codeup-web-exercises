@@ -62,6 +62,11 @@ const dnUtils = {
                 }
             }
             return stringArray.join('');
+        },
+        reverse(string) {
+            let strArray = str.split("");
+            strArray = strArray.reverse();
+            return strArray.join("");
         }
     },
     array: {
