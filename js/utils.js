@@ -25,6 +25,29 @@ const dnUtils = {
         // the foollowing checks if a number is divisible by 2 other numbers
         isDivisible (n, x, y) {
             return n % x === 0 && n % y === 0;
+        },
+        // the following checks if the number is a perfect power. If so, it returns [a,b] where a**b = the number
+        // else returns false ?? need to figure out the best thing to return
+        isPerfectPower (n){
+            for (let i = 2; i < ((n / 2) + 1); i++){
+                let number = n;
+                let counter = 1;
+                if (n % i === 0) {
+                    for (let j = 1; number >= i; j++) {
+                        number /= i;
+                        if (Math.ceil(number) !== Math.floor(number)){
+                            break;
+                        } else if (number === 1) {
+                            return [i, counter];
+                        } else {
+                            counter++;
+                        }
+                    }
+                } else {
+                    continue;
+                }
+            }
+            return false;
         }
     },
     geometry: {
