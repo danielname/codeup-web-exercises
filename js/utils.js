@@ -94,6 +94,18 @@ const dnUtils = {
             strArray = strArray.reverse();
             return strArray.join("");
         },
+        // the following swaps upper and lower case of a string
+        toAlternatingCase (string) {
+            let stringArray = string.split('');
+            for (let i = 0; i < stringArray.length; i++){
+                if (stringArray[i].toLowerCase() !== stringArray[i]){
+                    stringArray[i] = stringArray[i].toLowerCase();
+                } else {
+                    stringArray[i] = stringArray[i].toUpperCase();
+                }
+            }
+            return stringArray.join('');
+        },
         // the following takes a string and makes an acronym
         toAcronym(string){
             let inpArray = string.split(" ");
