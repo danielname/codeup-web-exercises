@@ -130,6 +130,13 @@ const dnUtils = {
                 return b[1] - a[1];
             });
             return arraySorted[0][0];
+        },
+        stringItems(array){
+            let stringArray = array;
+            for (let i = 0; i < array.length; i++){
+                stringArray[i] = `${array[i]}`;
+            }
+            return stringArray;
         }
     }
 }
