@@ -40,6 +40,13 @@ const dnUtils = {
         circumference (radius) {
             const pi = Math.PI;
             return 2 * pi * radius;
+        },
+        // the following takes an array of 3 numbers and returns whether or not they are a pythagorean triple
+        isPythagoreanTriple(threeNumArray) {
+            threeNumArray.sort(function (a,b){
+                return a - b;
+            })
+            return threeNumArray[0] ** 2 + threeNumArray[1] ** 2 === threeNumArray[2] ** 2;
         }
     },
     conversion: {
@@ -131,6 +138,7 @@ const dnUtils = {
             });
             return arraySorted[0][0];
         },
+        // converts every item in an array into a string
         stringItems(array){
             let stringArray = array;
             for (let i = 0; i < array.length; i++){
