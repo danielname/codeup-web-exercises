@@ -35,6 +35,15 @@ const dnUtils = {
                 return false;
         }
     },
+    algebra: {
+        // the following takes two arrays of [x,y] coordinates and returns the slope between them. returns null if slope is undefined.
+        slope(p1,p2){
+                if (p1[0] === p2[0]){
+                    return null;
+                }
+                return (p2[1]-p1[1])/(p2[0]-p1[0]);
+        }
+    },
     geometry: {
         // the following returns the circumference of a circle given a radius
         circumference (radius) {
