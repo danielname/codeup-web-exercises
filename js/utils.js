@@ -91,6 +91,16 @@ const dnUtils = {
             } else {
                 return `00${time.slice(2)}`;
             }
+        },
+        //the following takes a year and returns either true or false if it is a leap year
+        isLeapYear(year) {
+            if (year % 4 === 0){
+                if (year % 100 === 0){
+                    return year % 400 === 0;
+                }
+                return true;
+            }
+            return false;
         }
     },
     string: {
