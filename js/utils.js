@@ -33,6 +33,18 @@ const dnUtils = {
                     for (let k = 2; m ** k <= n; ++ k)
                         if (m ** k === n) return [m, k];
                 return false;
+        },
+        isPrime(number){
+            let prime = true;
+            let checkValue = 2;
+            while (prime === true && checkValue < number){
+                if (number % checkValue === 0){
+                    prime = false;
+                } else {
+                    checkValue++;
+                }
+            }
+            return prime;
         }
     },
     algebra: {
