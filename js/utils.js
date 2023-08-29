@@ -45,6 +45,13 @@ const dnUtils = {
                 }
             }
             return prime;
+        },
+        isfactor(num0, num1){
+            if (num0 === num1) return true
+            for(let i = 1; i <= num0; i++){
+                if (num1 / i === num0) return true
+            }
+            return false
         }
     },
     algebra: {
